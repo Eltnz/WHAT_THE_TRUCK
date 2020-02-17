@@ -5,6 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :food_trucks
   has_many :bookings
-  validates :email, :phone_number, :first_name, :last_name, presence: true
-  validates_uniqueness_of :first_name, scope: [:last_name]
+  validates :phone_number, :first_name, :last_name, presence: true
 end

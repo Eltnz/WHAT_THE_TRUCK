@@ -1,0 +1,22 @@
+
+
+.btn-yellow {
+  color: black;
+  padding: 8px 24px;
+  border-radius: 2px;
+  font-weight: thin;
+  background-size: 200% 100% ;
+  background-image: linear-gradient(to right, $warm-yellow 50%, $baby-white 50%);
+  border: 1px solid $warm-yellow;
+  transition-delay: 0.2s;
+  transition-property: margin-right, background-color;
+  transition: background-position 1s, border-color 2s;
+}
+
+.btn-yellow:hover {
+  border-color: black;
+  color: black;
+  text-decoration: none;
+  background-position: -100% 0;
+
+}

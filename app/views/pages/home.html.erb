@@ -12,4 +12,17 @@
       <%= link_to "See details", food_truck_path(foodtruck), class: "btn btn-primary"%></li>
   <% end %>
 </ul>
+<!--  -->
+
+<%= form_tag(ft_search_path, method: 'get') do %>
+<%= 'city:' %><%= text_field_tag 'city' %>
+<%= 'category:' %><%= text_field_tag 'category' %>
+<%= 'start date:' %><%= date_field_tag 'start date' %>
+<%= 'end date:' %><%= date_field_tag 'end date' %>
+<div><%= submit_tag 'Submit' %></div>
+<% end -%>
+
+
+
+
 

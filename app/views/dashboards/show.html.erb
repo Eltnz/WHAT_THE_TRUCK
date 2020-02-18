@@ -1,0 +1,18 @@
+<h1> DASHBOARD</h1>
+
+<h2> My foodtrucks :</h2>
+<% @foodtrucks.each do |foodtruck| %>
+  <%= foodtruck.name %> <br>
+  <%= foodtruck.city %> <br>
+  <%= foodtruck.category %> <br>
+  <%= foodtruck.price_per_day %> <br>
+  <%= foodtruck.menu %> <br>
+<% end %>
+
+<h2> My bookings :</h2>
+<% @bookings.each do |booking| %>
+  <%= booking.start_date %> <br>
+  <%= booking.end_date %> <br>
+  <%= booking.total_price %> <br>
+  <%= booking.price_per_day %> <br>
+<% end %>

@@ -1,0 +1,16 @@
+<h1>
+  <%= @foodtruck.name.capitalize %>
+</h1>
+
+<ul>
+  <li> <strong><%= @foodtruck.city&.capitalize %></strong></li>
+  <li>Category : <%= @foodtruck.category %></li>
+  <li>Menu : <%= @foodtruck.menu %></li>
+  <li>Availability : <%= @foodtruck.availability %></li>
+  <li>Price per day : <%= @foodtruck.price_per_day %></li>
+
+</ul>
+
+<br>
+<%= link_to "All foodtrucks", root_path, class: "btn btn-primary" %>
+<%= link_to "Let's book", new_food_truck_booking_path(@foodtruck) %>

@@ -34,6 +34,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       # t.datetime :locked_at
       # t.references :food_truck, null: false, foreign_key: true
 
+      # t.references :food_truck, null: false, foreign_key: true
+
+
+
 
       t.timestamps null: false
     end

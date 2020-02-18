@@ -21,7 +21,7 @@ user_20 = User.create(email: Faker::Internet.email, first_name: Faker::FunnyName
 user_test = User.create(email: 'a@b.com', first_name: 'Jorge', last_name: 'George', phone_number:'0642', password:'azerty')
 
 user_3 = User.create(email: Faker::Internet.email, first_name: Faker::FunnyName.name, last_name: Faker::FunnyName.name, phone_number:'0612', password:'nespresso')
-user_test = User.create(email: "test@mail.com", password:'azerty',first_name: Faker::FunnyName.name, last_name: Faker::FunnyName.name, phone_number:'0613')
+user_test_2 = User.create(email: "test@mail.com", password:'azerty',first_name: Faker::FunnyName.name, last_name: Faker::FunnyName.name, phone_number:'0613')
 
 
 food_truck_1 = FoodTruck.create(name: 'Chairman Bao', category: 'Asian delices', menu: 'Bo-Bun, nems, raviolis' , availability: true, city: 'San Francisco', price_per_day: 1114.5, user: user_1)
@@ -31,6 +31,10 @@ food_truck_4 = FoodTruck.create(name: 'Pig-N-Out BBQ', category: 'American style
 food_truck_5 = FoodTruck.create(name: 'Mexellent', category: 'Mexican style', menu: 'Mexcian best meats' , availability: true, city: 'Paris', price_per_day: 536.5, user: user_2)
 
 food_truck_6 = FoodTruck.create(name: 'test20', category: ' style', menu: 'Mexcian ' , availability: true, city: 'Paris', price_per_day: 536, user: user_test)
+food_truck_7 = FoodTruck.create(name: 'Piggy', category: ' style cochonne', menu: 'suacisson' , availability: true, city: 'Lyon', price_per_day: 536, user: user_test_2)
+food_truck_8 = FoodTruck.create(name: 'Kenya', category: ' style corse', menu: 'ramen' , availability: true, city: 'Lyon', price_per_day: 536, user: user_test_2)
+food_truck_9 = FoodTruck.create(name: 'Basic Burger', category: ' American style', menu: 'burgers' , availability: true, city: 'San Francisco', price_per_day: 536, user: user_test_2)
+
 
 # booking_20 = Booking.create(foodtruck_id: '' )
 

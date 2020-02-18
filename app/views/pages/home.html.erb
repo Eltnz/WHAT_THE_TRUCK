@@ -4,3 +4,12 @@
 
 <%= link_to "SEARCH", "#", class: "btn-yellow" %>
 
+<h1>All foodtrucks</h1>
+
+<ul>
+  <% @foodtrucks.each do |foodtruck| %>
+    <li><%=foodtruck.name.capitalize %> <%=foodtruck.category.capitalize %> <%=foodtruck.city.capitalize %>
+      <%= link_to "See details", food_truck_path(foodtruck), class: "btn btn-primary"%></li>
+  <% end %>
+</ul>
+

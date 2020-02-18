@@ -1,14 +1,14 @@
 class BookingsController < ApplicationController
 
   def new
-    @foodtruck = foodtruck.find(params[:foodtruck_id])
-    @user = user.find(params[:user_id])
+    @foodtruck = FoodTruck.find(params[:food_truck_id])
+    @user = current_user
     @booking = Booking.new
   end
 
   def create
-    @foodtruck = foodtruck.find(params[:foodtruck_id])
-    @user = user.find(params[:user_id])
+    @foodtruck = FoodTruck.find(params[:foodtruck_id])
+    @user = User.find(params[:user_id])
     @booking = Booking.new(booking_params)
     if @booking.save
       redirect_to user_path(@booking.user)

@@ -3,6 +3,7 @@
 <ul>
   <% @foodtrucks.each do |foodtruck| %>
     <li><%=foodtruck.name.capitalize %> <%=foodtruck.category.capitalize %> <%=foodtruck.city.capitalize %>
+      <% @booking.start_date = "start date"%><% @booking.end_date = "end date"%>
       <%= link_to "See details", food_truck_path(foodtruck), class: "btn btn-primary"%></li>
   <% end %>
 </ul>

@@ -16,8 +16,13 @@ user_1 = User.new(email: Faker::Internet.email, first_name: Faker::FunnyName.nam
 user_1.save!
 user_2 = User.new(email: Faker::Internet.email, first_name: Faker::FunnyName.name, last_name: Faker::FunnyName.name, phone_number:'0611', password:'nespresso')
 user_2.save!
+
 user_20 = User.create(email: Faker::Internet.email, first_name: Faker::FunnyName.name, last_name: Faker::FunnyName.name, phone_number:'0612', password:'nespresso')
 user_test = User.create(email: 'a@b.com', first_name: 'Jorge', last_name: 'George', phone_number:'0642', password:'azerty')
+
+user_3 = User.create(email: Faker::Internet.email, first_name: Faker::FunnyName.name, last_name: Faker::FunnyName.name, phone_number:'0612', password:'nespresso')
+user_test = User.create(email: "test@mail.com", password:'azerty',first_name: Faker::FunnyName.name, last_name: Faker::FunnyName.name, phone_number:'0613')
+
 
 food_truck_1 = FoodTruck.create(name: 'Chairman Bao', category: 'Asian delices', menu: 'Bo-Bun, nems, raviolis' , availability: true, city: 'San Francisco', price_per_day: 1114.5, user: user_1)
 food_truck_2 = FoodTruck.create(name: 'Great Bowls on Tires', category: 'American delices', menu: 'Burgers, hot-dogs, raviolis' , availability: true, city: 'L.A', price_per_day: 714.5, user: user_1)

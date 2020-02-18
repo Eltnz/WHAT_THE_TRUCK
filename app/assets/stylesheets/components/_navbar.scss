@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 55px;
+  align-items: center;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,3 +13,63 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+
+/* Style The Dropdown Button */
+.dropbtn {
+  color: black;
+  padding: 8px 32px;
+  border-radius: 2px;
+  font-weight: thin;
+  font-size: 13px;
+  background-size: 200% 100% ;
+  background-image: linear-gradient(to right, $warm-yellow 50%, $baby-white 50%);
+  border: 1px solid $warm-yellow;
+  transition-delay: 0.1s;
+  transition-property: margin-right, background-color;
+  transition: background-position 1s, border-color 1s;
+  width: 160px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+  border-color: black;
+  color: black;
+  text-decoration: none;
+  background-position: -100% 0;
+  cursor: pointer;
+}
+

@@ -7,20 +7,74 @@
   </div>
 </div>
 
-<ul>
-  <% @foodtrucks.each do |foodtruck| %>
-    <li><%=foodtruck.name.capitalize %> <%=foodtruck.category.capitalize %> <%=foodtruck.city.capitalize %>
-      <%= link_to "See details", food_truck_path(foodtruck), class: "btn btn-primary"%></li>
-  <% end %>
-</ul>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active d-flex align-items-center">
+      <!-- 3 card foodtruck -->
+      <% @foodtrucks.first(3).each do |ft| %>
+        <div class="card-food-truck">
+          <img src="https://images.unsplash.com/photo-1573918780733-c6cc6d4d5b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80.jpg" />
+            <div class="card-food-truck-infos">
+              <div>
+                <p><%= ft.city %></p>
+                <h3><%= ft.name %></h3>
+                <p><%= ft.category %></p>
+              </div>
+              <div class="card-food-truck-infos-price">
+                <p id=currency>€</p>
+                <h2><%= ft.price_per_day %></h2>
+                <p id=day>  PER DAY</p>
+              </div>
+            </div>
+        </div>
+      <% end %>
+    </div>
 
-<%= form_tag(ft_search_path, method: 'get') do %>
-<%= 'city:' %><%= text_field_tag 'city' %>
-<%= 'category:' %><%= text_field_tag 'category' %>
-<%= 'start date:' %><%= date_field_tag 'start date' %>
-<%= 'end date:' %><%= date_field_tag 'end date' %>
-<div><%= submit_tag 'Submit' %></div>
-<% end -%>
+    <div class="carousel-item">
+      <div class="card-food-truck">
+        <img src="https://images.unsplash.com/photo-1573918780733-c6cc6d4d5b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80.jpg" />
+        <div class="card-food-truck-infos">
+          <div>
+            <p>CITY</p>
+            <h3>Name of the truck</h3>
+            <p>Category</p>
+          </div>
+          <div class="card-food-truck-infos-price">
+            <p id=currency>€</p>
+            <h2>price</h2>
+            <p id=day>  PER DAY</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="card-food-truck">
+        <img src="https://images.unsplash.com/photo-1573918780733-c6cc6d4d5b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80.jpg" />
+        <div class="card-food-truck-infos">
+          <div>
+            <p>CITY</p>
+            <h3>Name of the truck</h3>
+            <p>Category</p>
+          </div>
+          <div class="card-food-truck-infos-price">
+            <p id=currency>€</p>
+            <h2>price</h2>
+            <p id=day>  PER DAY</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
 
 

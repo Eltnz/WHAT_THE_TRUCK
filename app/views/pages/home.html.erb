@@ -1,6 +1,30 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
 
-<%= link_to "SEARCH", "#", class: "btn-yellow" %>
+
+
+<h1>All foodtrucks</h1>
+
+<ul>
+  <% @foodtrucks.each do |foodtruck| %>
+    <li><%=foodtruck.name.capitalize %> <%=foodtruck.category.capitalize %> <%=foodtruck.city.capitalize %>
+      <%= link_to "See details", food_truck_path(foodtruck), class: "btn btn-primary"%></li>
+  <% end %>
+</ul>
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80);">
+  <div class="container">
+    <h1>What the truck</h1>
+    <p>Great wheels on tire! </p>
+    <p><%= link_to "FIND THE FOODTRUCK OF YOUR DREAMS", "#", class: "btn-yellow-slide" %></p>
+  </div>
+
+
+<%= link_to "SEARCH", "#", class: "btn-yellow"%>
+
+<%= link_to "SEARCH", "#", class: "btn-green"%>
+
+<%= link_to "SEARCH", "#", class: "btn-white"%>
+
+<%= link_to "SEARCH", "#", class: "btn-white-border"%>
 

@@ -13,4 +13,4 @@
 
 <br>
 <%= link_to "All foodtrucks", root_path, class: "btn btn-primary" %>
-<%= link_to "Let's book", new_food_truck_booking_path(@foodtruck) %>
+<%= link_to "Let's book", new_food_truck_booking_path(@foodtruck, start_date: params[:start_date], end_date: params[:end_date]) %>

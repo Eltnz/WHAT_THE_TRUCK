@@ -42,3 +42,59 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.btn-green {
+  color: black;
+  padding: 8px 32px;
+  border-radius: 2px;
+  font-weight: thin;
+  font-size: 13px;
+  background-color: $persian-green;
+  border: 1px solid $persian-green;
+}
+
+.btn-green:hover {
+  border: 1px solid #128779;
+  color: black;
+  background-color: #128779;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-white {
+  color: black;
+  padding: 8px 32px;
+  border-radius: 2px;
+  font-weight: thin;
+  font-size: 13px;
+  background-color: $baby-white;
+  border: 1px solid $baby-white;
+}
+
+.btn-white:hover {
+  border: 1px solid black;
+  color: white;
+  opacity: 0.7;
+  background-color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-white-border {
+  color: black;
+  padding: 8px 32px;
+  border-radius: 2px;
+  font-weight: thin;
+  font-size: 13px;
+  background-color: $baby-white;
+  border: 1px solid $baby-white;
+}
+
+.btn-white-border:hover {
+  border: 1px solid #f4f2f2;
+  color: black;
+  background-color: #f4f2f2;
+  text-decoration: none;
+  cursor: pointer;
+}
+

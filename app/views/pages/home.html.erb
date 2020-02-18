@@ -1,24 +1,11 @@
 
 <div class="banner">
-
-
-<div class="card-food-truck">
-  <img src="https://images.unsplash.com/photo-1573918780733-c6cc6d4d5b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80.jpg" />
-  <div class="card-food-truck-infos">
-    <div>
-      <p>CITY</p>
-      <h3>Name of the truck</h3>
-       <p>Category</p>
-    </div>
-    <div class="card-food-truck-infos-price">
-      <p id=currency>€</p>
-      <h2>price</h2>
-      <p id=day>  PER DAY</p>
-    </div>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_eqNs08HP1c2zQsYkLFvWbR3s70j2ZMN9_xlPU958w9aQRsAd" class="card-food-truck-user avatar-bordered" />
-
-
-<h1>All foodtrucks</h1>
+  <div class="container">
+    <h1>What the truck</h1>
+    <p>Great wheels on tire! </p>
+    <p><%= link_to "FIND THE FOODTRUCK OF YOUR DREAMS", "#", class: "btn-yellow-slide" %></p>
+  </div>
+</div>
 
 <ul>
   <% @foodtrucks.each do |foodtruck| %>
@@ -26,7 +13,6 @@
       <%= link_to "See details", food_truck_path(foodtruck), class: "btn btn-primary"%></li>
   <% end %>
 </ul>
-<!--  -->
 
 <%= form_tag(ft_search_path, method: 'get') do %>
 <%= 'city:' %><%= text_field_tag 'city' %>
@@ -41,25 +27,10 @@
 
 
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80);">
-
-  <div class="container">
-    <h1>What the truck</h1>
-    <p>Great wheels on tire! </p>
-    <p><%= link_to "FIND THE FOODTRUCK OF YOUR DREAMS", "#", class: "btn-yellow-slide" %></p>
-  </div>
-</div>
-
-<div class="carrousel">
-
-</div>
 
 
-<%= link_to "SEARCH", "#", class: "btn-yellow"%>
 
-<%= link_to "SEARCH", "#", class: "btn-green"%>
 
-<%= link_to "SEARCH", "#", class: "btn-white"%>
 
-<%= link_to "SEARCH", "#", class: "btn-white-border"%>
+
 

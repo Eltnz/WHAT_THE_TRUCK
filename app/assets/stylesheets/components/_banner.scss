@@ -3,8 +3,8 @@
   background-position: center;
   padding: 150px 0;
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('banner_image.jpg');
-
-}
+  min-height: 50vh
+  }
 
 .banner h1 {
   margin: 0;
@@ -12,6 +12,9 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+  // text-align: center;
+  // vertical-align: middle;
+  // line-height: 90px;
 }
 
 .banner p {

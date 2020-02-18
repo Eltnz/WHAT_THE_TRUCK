@@ -1,0 +1,10 @@
+<h1>Booking</h1>
+
+<h2>@foodTruck.name</h2>
+<p>@booking.start_date</p>
+<p>@booking.end_date</p>
+<p>@booking.price_per_day</p>
+<p> Booking for <%= duration = @booking.end_date - @booking.start_date %></p>
+
+<%= @booking.total_price = @foodtruck.price_per_day * duration%>
+<%= link_to "user page", "#", class: "btn-yellow" %>

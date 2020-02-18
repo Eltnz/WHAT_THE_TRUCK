@@ -14,11 +14,31 @@
   transition: background-position 1s, border-color 1s;
 }
 
-.btn-yellow:hover {
+.btn-yellow-slide:hover {
   border-color: black;
   color: black;
   text-decoration: none;
   background-position: -100% 0;
   cursor: pointer;
 
+}
+
+
+.btn-yellow {
+  color: black;
+  padding: 8px 32px;
+  border-radius: 2px;
+  font-weight: thin;
+  font-size: 13px;
+  background-size: 200% 100% ;
+  background-color: $warm-yellow;
+  border: 1px solid $warm-yellow;
+}
+
+.btn-yellow:hover {
+  border: 1px solid #d6a748;
+  color: black;
+  background-color: #d6a748;
+  text-decoration: none;
+  cursor: pointer;
 }

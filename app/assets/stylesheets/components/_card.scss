@@ -15,7 +15,6 @@
 .card-food-truck > img {
   height: 320px;
   width: 300px;
-  -o-object-fit: cover;
   object-fit: cover;
   display: block;
   margin-left: auto;
@@ -43,8 +42,8 @@
   margin: 0;
 }
 .card-food-truck-infos-price {
-display:flex;
-justify-content: flex-end;
+  display:flex;
+  justify-content: flex-end;
 }
 
 
@@ -75,7 +74,9 @@ justify-content: flex-end;
 
 .card-food-truck-infos .card-food-truck-user {
   position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+  right: 18px;
+  top: -29px;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
 }

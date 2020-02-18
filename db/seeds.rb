@@ -25,7 +25,7 @@ food_truck_3 = FoodTruck.create(name: 'Holy Smoked', category: 'fish&chips', men
 food_truck_4 = FoodTruck.create(name: 'Pig-N-Out BBQ', category: 'American style', menu: 'BBQ best meats' , availability: true, city: 'Paris', price_per_day: 136.5, user: user_2)
 food_truck_5 = FoodTruck.create(name: 'Mexellent', category: 'Mexican style', menu: 'Mexcian best meats' , availability: true, city: 'Paris', price_per_day: 536.5, user: user_2)
 
-food_truck_6 = FoodTruck.create(name: 'test20', category: ' style', menu: 'Mexcian ' , availability: true, city: 'Paris', price_per_day: 536)
+food_truck_6 = FoodTruck.create(name: 'test20', category: ' style', menu: 'Mexcian ' , availability: true, city: 'Paris', price_per_day: 536, user: user_test)
 
 # booking_20 = Booking.create(foodtruck_id: '' )
 
@@ -37,4 +37,4 @@ food_truck_3.user = user_2
 food_truck_4.user = user_2
 food_truck_5.user = user_2
 
-food_truck_6.user = user_20
+food_truck_6.user = user_test

@@ -27,3 +27,4 @@ food_truck_9 = FoodTruck.create(name: 'Basic Burger', category: 'American style'
 
 test_booking = Booking.create(food_truck: food_truck_7, user: hungry_joe, total_price: 2890, start_date: '2020-02-21' ,end_date: '2020-02-21')
 test_booking_2 = Booking.create(food_truck: food_truck_6, user: hungry_joe, total_price: 2890, start_date: '2020-04-15' ,end_date: '2020-04-17')
+

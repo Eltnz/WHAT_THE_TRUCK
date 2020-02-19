@@ -5,7 +5,8 @@
   justify-content: space-between;
   height: 75px;
   padding: 0px 20px;
-  color: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))
+  color: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+
 }
 .footer-links {
   display: flex;
@@ -24,4 +25,8 @@
 }
 .footer-copyright {
   font-size: 12px;
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 75px - 55px);
 }

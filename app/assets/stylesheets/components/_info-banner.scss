@@ -1,20 +1,20 @@
-.grey-info-banner {
-  background-color: #EBEBEB;
-  color: black;
+.black-info-banner {
+  background-color: #2F2D31;
+  color: $baby-white;
 }
 
-.grey-info-banner h1 {
+.black-info-banner h1 {
   font-size: 32px;
   padding-top: 15px;
 }
 
-.grey-info-banner h2 {
+.black-info-banner h2 {
   font-size: 24px;
   padding-top: 15px;
 }
 
 .white-info-banner {
-  background-color: $baby-white;
+  background-color: #F4F4F4;
   color: black;
 }
 
@@ -61,8 +61,16 @@
 
 #day-show {
   margin-bottom: 0.5rem;
-  color: #636366;
+  color: $baby-white;
   vertical-align: text-bottom;
   align-self: flex-end;
   padding-left: 5px;
 }
+
+#currency-white {
+  margin: 0;
+  color: $baby-white;
+  vertical-align: text-bottom;
+  padding-right: 5px;
+}
+

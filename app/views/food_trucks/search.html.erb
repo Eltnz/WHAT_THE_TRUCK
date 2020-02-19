@@ -1,0 +1,13 @@
+<h1>Your foodtrucks</h1>
+
+<ul>
+  <% @foodtrucks.each do |foodtruck| %>
+    <li><%=foodtruck.name.capitalize %> <%=foodtruck.category.capitalize %> <%=foodtruck.city.capitalize %>
+      <%# @booking.start_date = "start date"%><%# @booking.end_date = "end date"%>
+      <%= link_to "See details", food_truck_path(foodtruck, start_date: params[:start_date], end_date: params[:end_date]), class: "btn btn-primary"%></li>
+  <% end %>
+</ul>
+
+<%= link_to "return to foodtruck selection", root_path, class: "btn btn-primary" %>
+
+

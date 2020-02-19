@@ -1,22 +1,127 @@
 
 
-.btn-yellow {
+.btn-yellow-slide {
   color: black;
-  padding: 8px 24px;
+  padding: 8px 32px;
   border-radius: 2px;
   font-weight: thin;
+  font-size: 13px;
   background-size: 200% 100% ;
   background-image: linear-gradient(to right, $warm-yellow 50%, $baby-white 50%);
   border: 1px solid $warm-yellow;
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
   transition-property: margin-right, background-color;
-  transition: background-position 1s, border-color 2s;
+  transition: background-position 1s, border-color 1s;
 }
 
-.btn-yellow:hover {
+.btn-yellow-slide:hover {
   border-color: black;
   color: black;
   text-decoration: none;
   background-position: -100% 0;
+  cursor: pointer;
 
 }
+
+
+.btn-yellow {
+  color: black;
+  padding: 8px 32px;
+  border-radius: 2px;
+  font-weight: thin;
+  font-size: 13px;
+  background-size: 200% 100% ;
+  background-color: $warm-yellow;
+  border: 1px solid $warm-yellow;
+}
+
+.btn-yellow:hover {
+  border: 1px solid #d6a748;
+  color: black;
+  background-color: #d6a748;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-green {
+  color: black;
+  padding: 8px 32px;
+  border-radius: 2px;
+  font-weight: thin;
+  font-size: 13px;
+  background-color: $persian-green;
+  border: 1px solid $persian-green;
+}
+
+.btn-green:hover {
+  border: 1px solid #128779;
+  color: black;
+  background-color: #128779;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-white {
+  color: black;
+  padding: 8px 32px;
+  border-radius: 2px;
+  font-weight: thin;
+  font-size: 13px;
+  background-color: $baby-white;
+  border: 1px solid $baby-white;
+}
+
+.btn-white:hover {
+  border: 1px solid black;
+  color: white;
+  opacity: 0.7;
+  background-color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-black {
+  color: white;
+  padding: 8px 32px;
+  border-radius: 2px;
+  font-weight: thin;
+  font-size: 13px;
+  background-color: black;
+  border: 1px solid black;
+}
+
+.btn-black:hover {
+  border: 1px solid black;
+  color: black;
+  opacity: 0.7;
+  background-color: $baby-white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+.btn-white-border {
+  color: black;
+  padding: 8px 32px;
+  border-radius: 2px;
+  font-weight: thin;
+  font-size: 13px;
+  background-color: $baby-white;
+  border: 1px solid $baby-white;
+}
+
+.btn-white-border:hover {
+  border: 1px solid #f4f2f2;
+  color: black;
+  background-color: #f4f2f2;
+  text-decoration: none;
+  cursor: pointer;
+}
+

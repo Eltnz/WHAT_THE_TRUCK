@@ -1,0 +1,32 @@
+#search {
+  color: black;
+  padding: 8px 32px;
+  border-radius: 20px;
+  font-weight: thin;
+  font-size: 13px;
+  background-size: 200% 100% ;
+  background-image: linear-gradient(to right, $warm-yellow 50%, $baby-white 50%);
+  border: 1px solid $warm-yellow;
+  transition-delay: 0.1s;
+  transition-property: margin-right, background-color;
+  transition: background-position 1s, border-color 1s;
+}
+
+#search {
+  border-color: black;
+  color: black;
+  text-decoration: none;
+  background-position: -100% 0;
+  cursor: pointer;
+
+}
+
+
+.field {
+  background-color: $baby-white;
+  height: 60px;
+}
+
+#city {
+  height: 100%;
+}

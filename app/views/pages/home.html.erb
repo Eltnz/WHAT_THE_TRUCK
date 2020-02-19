@@ -1,11 +1,32 @@
 
 <div class="banner">
-  <div class="container">
-    <h1>What the truck</h1>
+
+  <div class="container text-center">
+    <h3>With Wath The Truck you can rent the best foodtruck in your city for you event</h3>
+    <h3>As a Food Truck owner you can rent you truck</h3>
+    <br>
     <p>Great wheels on tire! </p>
-    <p><%= link_to "FIND THE FOODTRUCK OF YOUR DREAMS", "#", class: "btn-yellow-slide" %></p>
+
+
+      <%= form_tag(ft_search_path, method: 'get') do %>
+      <div class="field p-3 d-flex justify-content-around align-items-center">
+        <%='City:' %><%= text_field_tag 'city' %>
+        <%= 'Category:' %><%= text_field_tag 'category' %>
+        <%= 'start date:' %><%= date_field_tag 'start_date' %>
+        <%= 'end date:' %><%= date_field_tag 'end_date' %>
+      </div>
+
+    <div>
+      <%= submit_tag "FIND THE FOODTRUCK OF YOUR DREAMS", class: "btn-yellow-slide mt-5" %>
+      <% end -%>
+    </div>
+
   </div>
+
 </div>
+
+
+
 
 <div class="container">
 
@@ -14,18 +35,18 @@
       <div class="carousel-item active">
         <div class= "d-flex">
         <!-- 3 card foodtruck -->
-        <% @foodtrucks.first(3).each do |ft| %>
+        <% @foodtrucks.first(3).each do |foodtruck| %>
           <div class="card-food-truck">
-            <img src="https://images.unsplash.com/photo-1573918780733-c6cc6d4d5b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80.jpg" />
+            <%= image_tag "https://images.unsplash.com/photo-1573918780733-c6cc6d4d5b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80.jpg" %>
               <div class="card-food-truck-infos">
                 <div>
-                  <p><%= ft.city %></p>
-                  <h3><%= ft.name %></h3>
-                  <p><%= ft.category %></p>
+                  <p><%= foodtruck.city %></p>
+                  <h3><%= link_to foodtruck.name, food_truck_path(foodtruck)%></h3>
+                  <p><%= foodtruck.category %></p>
                 </div>
                 <div class="card-food-truck-infos-price">
                   <p id=currency>€</p>
-                  <h2><%= ft.price_per_day %></h2>
+                  <h2><%= foodtruck.price_per_day %></h2>
                   <p id=day>  PER DAY</p>
                 </div>
               </div>
@@ -36,18 +57,18 @@
 
       <div class="carousel-item">
         <div class="d-flex">
-          <% @foodtrucks.last(3).each do |ft| %>
+          <% @foodtrucks.last(3).each do |foodtruck| %>
             <div class="card-food-truck">
-              <img src="https://images.unsplash.com/photo-1573918780733-c6cc6d4d5b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80.jpg" />
+              <%= image_tag "https://images.unsplash.com/photo-1573918780733-c6cc6d4d5b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80.jpg" %>
               <div class="card-food-truck-infos">
                 <div>
-                  <p><%= ft.city %></p>
-                  <h3><%= ft.name %></h3>
-                  <p><%= ft.category %></p>
+                  <p><%= foodtruck.city %></p>
+                  <h3><%= link_to foodtruck.name, food_truck_path(foodtruck)%></h3>
+                  <p><%= foodtruck.category %></p>
                 </div>
                 <div class="card-food-truck-infos-price">
                   <p id=currency>€</p>
-                  <h2><%= ft.price_per_day %></h2>
+                  <h2><%= foodtruck.price_per_day %></h2>
                   <p id=day>  PER DAY</p>
                 </div>
               </div>
@@ -67,11 +88,8 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+
 </div>
-
-
-
-
 
 
 

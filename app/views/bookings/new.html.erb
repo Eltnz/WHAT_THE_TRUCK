@@ -1,10 +1,9 @@
-<h1>Booking</h1>
+     <h1>Confirm your booking for @foodtruck</h1>
+        <%= simple_form_for @foodtruck do |f| %>
+        <%= f.input :commenter, :input_html => { :value => current_user.first_name }, label: false, disabled: true %>
+        <%=f.input :start_date, :input_html => { :value => params[:start_date], id: "flatpickr-start" } %>
+        <%=f.input :end_date, :input_html => { :value => params[:end_date], id: "flatpickr-end" } %>
+        <%= f.button :submit %>
+      <% end %>
+      <%= link_to "Your search", ft_search_path %>
 
-<h2>@foodTruck.name</h2>
-<p>@booking.start_date</p>
-<p>@booking.end_date</p>
-<p>@booking.price_per_day</p>
-<p> Booking for <%= duration = @booking.end_date - @booking.start_date %></p>
-
-<%= @booking.total_price = @foodtruck.price_per_day * duration%>
-<%= link_to "user page", "#", class: "btn-yellow" %>

@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
 
   def new
+    @foodtrucks = FoodTruck.all
     @foodtruck = FoodTruck.find(params[:food_truck_id])
     @user = current_user
     @booking = Booking.new

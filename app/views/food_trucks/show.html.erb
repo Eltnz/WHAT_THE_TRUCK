@@ -63,7 +63,7 @@
 
     <div>
       <br>
-      <%= link_to "BOOK NOW", new_food_truck_booking_path(@foodtruck) , class: "btn-green" %>
+      <%= link_to "BOOK NOW", new_food_truck_booking_path(@foodtruck, start_date: params[:start_date], end_date: params[:end_date]), class: "btn-green" %>
       <br>
       <br>
       <%= link_to "Back to search", root_path, class: "btn-black" %>
@@ -91,7 +91,3 @@
      </div>
   </div>
 </div>
-
-
-
-

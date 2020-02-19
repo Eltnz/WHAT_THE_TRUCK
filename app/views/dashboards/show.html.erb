@@ -9,6 +9,8 @@
   <%= foodtruck.menu %> <br>
 <% end %>
 
+<%= if policy(FoodTruck).create? %>
+
 <h2> My bookings :</h2>
 <% @bookings.each do |booking| %>
   <%= booking.start_date %> <br>

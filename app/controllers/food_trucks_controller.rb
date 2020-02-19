@@ -1,11 +1,13 @@
 class FoodTrucksController < ApplicationController
 skip_before_action :authenticate_user!, only: [:show, :search]
 
+
   def show
     @foodtruck = FoodTruck.find(params[:id])
   end
 
   def search
+    authorize @foodtruck
     if (params[:city] == "" && params[:category] == "")
       @foodtrucks = FoodTruck.where(city: params[:city], category: params[:category])
     elsif params[:city].nil? == false

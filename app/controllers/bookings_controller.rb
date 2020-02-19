@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    authorize @foodtruck
     @foodtruck = FoodTruck.find(params[:foodtruck_id])
     @user = User.find(params[:user_id])
     @booking = Booking.new(booking_params)

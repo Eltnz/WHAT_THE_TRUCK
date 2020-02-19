@@ -1,4 +1,68 @@
-.black-info-banner{
-  background-color:black;
-  color: $baby-white;
+.grey-info-banner {
+  background-color: #EBEBEB;
+  color: black;
+}
+
+.grey-info-banner h1 {
+  font-size: 32px;
+  padding-top: 15px;
+}
+
+.grey-info-banner h2 {
+  font-size: 24px;
+  padding-top: 15px;
+}
+
+.white-info-banner {
+  background-color: $baby-white;
+  color: black;
+}
+
+.white-info-banner h1 {
+  font-size: 32px;
+  padding-top: 15px;
+}
+
+.white-info-banner h2 {
+  font-size: 24px;
+  padding-top: 15px;
+  margin-bottom: 0px;
+}
+
+.white-info-banner h3 {
+  font-size: 16px;
+}
+
+.info-banner-price {
+  display:flex;
+  justify-content: flex-start;
+  margin-left:20px;
+}
+
+// .grey-info-banner .info-banner-price {
+//   padding: 16px;
+//   position: relative;
+// }
+
+// .info-banner-price .btn-black {
+//   position: absolute;
+//   right: 18px;
+//   top: -29px;
+// }
+#star {
+  vertical-align: text-bottom;
+}
+
+#localisation {
+  margin-right: 15px;
+  margin-bottom: 0.8rem;
+  vertical-align: text-bottom;
+}
+
+#day-show {
+  margin-bottom: 0.5rem;
+  color: #636366;
+  vertical-align: text-bottom;
+  align-self: flex-end;
+  padding-left: 5px;
 }

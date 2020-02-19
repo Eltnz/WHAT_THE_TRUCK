@@ -24,9 +24,9 @@ user_3 = User.create(email: Faker::Internet.email, first_name: Faker::FunnyName.
 user_test_2 = User.create(email: "test@mail.com", password:'azerty',first_name: Faker::FunnyName.name, last_name: Faker::FunnyName.name, phone_number:'0613')
 
 
-food_truck_1 = FoodTruck.create(name: 'Chairman Bao', category: 'Asian delices', menu: 'Bo-Bun, nems, raviolis' , availability: true, city: 'San Francisco', price_per_day: 1114.5, user: user_1)
-food_truck_2 = FoodTruck.create(name: 'Great Bowls on Tires', category: 'American delices', menu: 'Burgers, hot-dogs, raviolis' , availability: true, city: 'L.A', price_per_day: 714.5, user: user_1)
-food_truck_3 = FoodTruck.create(name: 'Holy Smoked', category: 'fish&chips', menu: 'fishs, chips' , availability: true, city: 'Paris', price_per_day: 914.5, user: user_2)
+food_truck_1 = FoodTruck.create(name: 'Chairman Bao', category: 'Asian delices', menu: 'Bo-Bun, nems, raviolis' , availability: true, city: 'San Francisco', address: 'San Francisco', price_per_day: 1114.5, user: user_1)
+food_truck_2 = FoodTruck.create(name: 'Great Bowls on Tires', category: 'American delices', menu: 'Burgers, hot-dogs, raviolis' , availability: true, city: 'L.A',address: '350 S Grand Avenue, Los Angeles, CA 90071, Downtown', price_per_day: 714.5, user: user_1)
+food_truck_3 = FoodTruck.create(name: 'Holy Smoked', category: 'fish&chips', menu: 'fishs, chips' , availability: true, city: 'Paris', address:'5 avenue Parmentier, 75011 Paris', price_per_day: 914.5, user: user_2)
 food_truck_4 = FoodTruck.create(name: 'Pig-N-Out BBQ', category: 'American style', menu: 'BBQ best meats' , availability: true, city: 'Paris', price_per_day: 136.5, user: user_2)
 food_truck_5 = FoodTruck.create(name: 'Mexellent', category: 'Mexican style', menu: 'Mexcian best meats' , availability: true, city: 'Paris', price_per_day: 536.5, user: user_2)
 

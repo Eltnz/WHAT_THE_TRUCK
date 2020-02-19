@@ -29,7 +29,7 @@
 
 
 
-<div class="grey-info-banner ">
+<div class="black-info-banner ">
   <div class="container">
     <div class="d-flex flex-row align-items-end">
       <h1><%= @foodtruck.name.capitalize %></h1>
@@ -55,7 +55,7 @@
 
     <br>
     <div class="card-food-truck-infos-price">
-      <p id=currency>€</p>
+      <p id=currency-white>€</p>
       <h3><%= @foodtruck.price_per_day %></h3>
       <p id="day-show">  PER DAY</p>
 
@@ -63,10 +63,7 @@
 
     <div>
       <br>
-      <%= link_to "BOOK NOW", new_food_truck_booking_path(@foodtruck, start_date: params[:start_date], end_date: params[:end_date]), class: "btn-green" %>
-      <br>
-      <br>
-      <%= link_to "Back to search", root_path, class: "btn-black" %>
+      <%= link_to "BOOK NOW", new_food_truck_booking_path(@foodtruck) , class: "btn-green" %>
     </div>
     <br>
        <!--  <li class="list-inline-item">Availability : <%= @foodtruck.availability %></li> -->
@@ -78,16 +75,20 @@
 
 </div>
 
-<div class="white-info-banner">
-  <div class="container">
+<div class="white-info-banner pb-3">
+  <div class="container ">
      <div class="my-6 ">
       <h2>Menu</h2>
       <br>
       <p><%= @foodtruck.menu %></p>
       <br>
       <br>
-      <br>
-      <br>
      </div>
+  <div class="text-right"><%= link_to "Back to homepage", root_path, class: "return-link" %>
   </div>
+
+  </div>
+
+
+
 </div>

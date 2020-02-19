@@ -11,7 +11,8 @@
   border: 1px solid $warm-yellow;
   transition-delay: 0.1s;
   transition-property: margin-right, background-color;
-  transition: background-position 1s, border-color 1s;
+  transition: background-position 0.7s, border-color 0.7s;
+  cursor: pointer;
 }
 
 .btn-yellow-slide:hover {
@@ -51,6 +52,7 @@
   font-size: 13px;
   background-color: $persian-green;
   border: 1px solid $persian-green;
+  text-decoration:none;
 }
 
 .btn-green:hover {
@@ -88,6 +90,7 @@
   font-size: 13px;
   background-color: black;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 .btn-black:hover {
@@ -98,13 +101,6 @@
   text-decoration: none;
   cursor: pointer;
 }
-
-
-
-
-
-
-
 
 
 .btn-white-border {
@@ -123,5 +119,22 @@
   background-color: #f4f2f2;
   text-decoration: none;
   cursor: pointer;
+  padding: 8px 32px;
 }
 
+.return-link {
+  color: black;
+  cursor: pointer;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-decoration: none;
+  text-align: right;
+}
+
+.return-link:hover {
+  color: $gray;
+  cursor: pointer;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: right;
+}

@@ -4,7 +4,6 @@ Booking.destroy_all
 FoodTruck.destroy_all
 User.destroy_all
 
-
 user_1 = User.create(email: Faker::Internet.email, first_name: Faker::FunnyName.name, last_name: Faker::FunnyName.name, phone_number:'0610', password:'nespresso')
 user_2 = User.create(email: Faker::Internet.email, first_name: Faker::FunnyName.name, last_name: Faker::FunnyName.name, phone_number:'0611', password:'nespresso')
 user_3 = User.create(email: Faker::Internet.email, first_name: Faker::FunnyName.name, last_name: Faker::FunnyName.name, phone_number:'0612', password:'nespresso')
@@ -24,7 +23,10 @@ food_truck_7 = FoodTruck.create(name: 'Piggy', category: 'style cochonne', menu:
 food_truck_8 = FoodTruck.create(name: 'Kenyan safari', category: 'Cuisine corse', menu: 'Ramens' , availability: true, city: 'Lyon 1', price_per_day: 290, user: user_4)
 food_truck_9 = FoodTruck.create(name: 'Basic Burger', category: 'American style', menu: 'Burgers' , availability: true, city: 'Marseille 2', price_per_day: 888, user: user_3)
 
-
 test_booking = Booking.create(food_truck: food_truck_7, user: hungry_joe, total_price: 2890, start_date: '2020-02-21' ,end_date: '2020-02-21')
 test_booking_2 = Booking.create(food_truck: food_truck_6, user: hungry_joe, total_price: 2890, start_date: '2020-04-15' ,end_date: '2020-04-17')
+
+
+
+
 

@@ -1,13 +1,52 @@
-<h1>Your foodtrucks</h1>
 
-<ul>
+<div class="container">
+  <div class="text-center">
+  <h1>Your foodtrucks</h1>
+  </div>
+
+<div class="row justify-content-between">
   <% @foodtrucks.each do |foodtruck| %>
-    <li><%=foodtruck.name.capitalize %> <%=foodtruck.category.capitalize %> <%=foodtruck.city.capitalize %>
-      <%# @booking.start_date = "start date"%><%# @booking.end_date = "end date"%>
-      <%= link_to "See details", food_truck_path(foodtruck, start_date: params[:start_date], end_date: params[:end_date]), class: "btn btn-primary"%></li>
+   <div class="col-4 my-4 text-center">
+      <div class="grey-info-banner justifiy-content">
+
+          <div class="justifiy-content">
+            <h1><%= foodtruck.name.capitalize %></h1>
+          </div>
+          <div>
+            <ul>
+              <li id="star" class="list-inline-item fas fa-star"></li>
+              <li id="star" class="list-inline-item fas fa-star"></li>
+              <li id="star" class="list-inline-item fas fa-star"></li>
+              <li id="star" class="list-inline-item fas fa-star"></li>
+              <li id="star" class="list-inline-item far fa-star"></li>
+            </ul>
+          </div>
+
+            <p><%= foodtruck.category %></p>
+
+          <div class="d-flex align-items-center text-center">
+            <i id="localisation" class="fas fa-map-marker-alt fa-2x"></i>
+            <h2><%= foodtruck.city&.capitalize %></h2>
+          </div>
+
+          <br>
+          <div class="d-flex justify-content-between px-2">
+
+          <div class="card-food-truck-infos-price">
+            <p id=currency>€</p>
+            <h3><%= foodtruck.price_per_day %></h3>
+            <p id="day-show">PER DAY</p>
+          </div>
+          <div>
+          <%= link_to "See details", food_truck_path(foodtruck, start_date: params[:start_date], end_date: params[:end_date]), class: "btn-green"%>
+          </div>
+          </div>
+
+      </div>
+    </div>
   <% end %>
-</ul>
-
-<%= link_to "return to foodtruck selection", root_path, class: "btn btn-primary" %>
+</div>
 
 
+  <%= link_to "return to foodtruck selection", root_path, class: "btn-black" %>
+</div>

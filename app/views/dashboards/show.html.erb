@@ -13,6 +13,5 @@
 <% @bookings.each do |booking| %>
   <%= booking.start_date %> <br>
   <%= booking.end_date %> <br>
-  <%= booking.total_price %> <br>
-  <%= booking.price_per_day %> <br>
+  <%= booking.total_price unless booking.total_price %> <br>
 <% end %>

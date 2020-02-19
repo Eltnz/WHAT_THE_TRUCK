@@ -7,11 +7,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @foodtruck = FoodTruck.find(params[:foodtruck_id])
-    @user = User.find(params[:user_id])
+    @foodtruck = FoodTruck.find(params[:food_truck_id])
+    @user = current_user
     @booking = Booking.new(booking_params)
+    @booking.user = @user
+    @booking.food_truck = @foodtruck
     if @booking.save
-      redirect_to user_path(@booking.user)
+      redirect_to dashboard_path
     else
       render :new
     end

@@ -4,6 +4,7 @@ skip_before_action :authenticate_user!, only: [:show, :search]
 
   def show
     @foodtruck = FoodTruck.find(params[:id])
+    @booking = Booking.new
   end
 
   def search
@@ -19,20 +20,20 @@ skip_before_action :authenticate_user!, only: [:show, :search]
   end
 
   def new
-      @foodtruck = FoodTruck.new
-    end
+    @foodtruck = FoodTruck.new
+  end
 
-    def create
-     @user = current_user
-     @foodtruck = FoodTruck.new(foodtruck_params)
-     @foodtruck.user = @user
+  def create
+    @user = current_user
+    @foodtruck = FoodTruck.new(foodtruck_params)
+    @foodtruck.user = @user
 
-      if @foodtruck.save
-        redirect_to dashboard_path(@user)
-      else
-       render "/dashboard/:id"
+    if @foodtruck.save
+      redirect_to dashboard_path(@user)
+    else
+     render "/dashboard/:id"
       end
-    end
+  end
 
 
   private

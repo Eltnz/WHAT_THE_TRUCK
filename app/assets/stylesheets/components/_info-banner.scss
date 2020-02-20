@@ -1,21 +1,26 @@
 .black-info-banner {
-  background-color: #2F2D31;
+  background-color: #595A5B;
   color: $baby-white;
-}
+  opacity: 0.8;
+  border-radius: 2px;
+  height: 450px;
+  display: grow;
+  }
 
 .black-info-banner h1 {
-  font-size: 32px;
+  font-size: 24px;
   padding-top: 15px;
 }
 
 .black-info-banner h2 {
   font-size: 24px;
-  padding-top: 15px;
 }
 
 .white-info-banner {
   background-color: #F4F4F4;
   color: black;
+  border-radius: 2px;
+  padding: 3px;
 }
 
 .white-info-banner h1 {
@@ -25,8 +30,6 @@
 
 .white-info-banner h2 {
   font-size: 24px;
-  padding-top: 15px;
-  margin-bottom: 0px;
 }
 
 .white-info-banner h3 {

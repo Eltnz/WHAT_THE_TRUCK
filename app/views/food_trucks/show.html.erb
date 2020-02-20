@@ -28,7 +28,9 @@
   </div>
 </div>
 
-<div class="container d-flex">
+
+
+<div class="container d-flex justify-content-between">
 
   <div class="black-info-banner ">
     <div class="container">
@@ -57,26 +59,43 @@
 
       </div>
 
-      <div>
-        <br>
-        <%= link_to "BOOK NOW", new_food_truck_booking_path(@foodtruck) , class: "btn-green" %>
-      </div>
-      <br>
          <!--  <li class="list-inline-item">Availability : <%= @foodtruck.availability %></li> -->
+
+      <div class="white-info-banner">
+        <div class="py-2 ">
+          <h2>Menu</h2>
+          <br>
+          <p><%= @foodtruck.menu %></p>
+          <br>
+          <br>
+        </div>
       </div>
+
+      </div>
+
     </div>
 
-</div>
 
-<div class="white-info-banner pb-3">
-  <div class="container ">
-     <div class="my-6 ">
-      <h2>Menu</h2>
-      <br>
-      <p><%= @foodtruck.menu %></p>
-      <br>
-      <br>
-    </div>
+      <div class="container-search text-center">
+
+      <%= simple_form_for [@foodtruck, @booking] do |f| %>
+      <%= f.input :commenter, :input_html => { :value => current_user.first_name }, label: false, disabled: true %>
+      <%=f.input :start_date, :input_html => { :value => params[:start_date], id: "flatpickr-start" } %>
+      <%=f.input :end_date, :input_html => { :value => params[:end_date], id: "flatpickr-end" } %>
+      <%= f.submit "Book it", class: "btn-green"%>
+        <% end %>
+        </div>
+
+        <h1><%= @booking.total_price %></h1>
+
+        <%= @booking.total_price %>
+
   </div>
+
+
+
+
+
+
 
 

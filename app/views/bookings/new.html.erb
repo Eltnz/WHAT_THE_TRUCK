@@ -1,5 +1,5 @@
      <h1>Confirm your booking for @foodtruck</h1>
-        <%= simple_form_for @foodtruck do |f| %>
+        <%= simple_form_for [@foodtruck, @booking] do |f| %>
         <%= f.input :commenter, :input_html => { :value => current_user.first_name }, label: false, disabled: true %>
         <%=f.input :start_date, :input_html => { :value => params[:start_date], id: "flatpickr-start" } %>
         <%=f.input :end_date, :input_html => { :value => params[:end_date], id: "flatpickr-end" } %>

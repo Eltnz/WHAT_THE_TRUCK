@@ -1,50 +1,36 @@
-test.rb
-<h1> DASHBOARD</h1>
+<div class="card-product">
+  <img src=".jpg" />
+  <div class="card-product-infos">
+<% booking = Booking.where(["food_truck_id = ?", foodtruck_id]) %>
+            <% foodtruck = FoodTruck.find([foodtruck_id]) %>
+            <h3><%= foodtruck[0].name%></h3>
+            <p> Du <%= booking[0].start_date.day %>/<%= booking[0].start_date.month %>/<%= booking[0].start_date.year %> au <%= booking[0].end_date.day %>/<%= booking[0].end_date.month%>/<%= booking[0].end_date.year %></p>
+            <p>TOTAL :
+              <%= booking[0].total_price %> €</p>
+          <% end %>
 
-<div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Bookings #1
-        </button>
-      </h2>
-    </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably havent heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h2 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          FoodTruck
-        </button>
-      </h2>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably havent heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h2 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          FoodTruck Bookings
-        </button>
-      </h2>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
+<% booking = Booking.where(["food_truck_id = ?", foodtruck_id]) %>
+            <% foodtruck = FoodTruck.find([foodtruck_id]) %>
+            <h3><%= foodtruck[0].name%></h3>
+            <p> Du <%= booking[0].start_date.day %>/<%= booking[0].start_date.month %>/<%= booking[0].start_date.year %> au <%= booking[0].end_date.day %>/<%= booking[0].end_date.month%>/<%= booking[0].end_date.year %></p>
+            <p>TOTAL :
+              <%= booking[0].total_price %> €</p>
+          <% end %>
+
+
+
+<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          <h2> My foodtrucks :</h2>
+            <% @bookings = [] %>
+            <% @foodtrucks.each do |foodtruck| %>
+              <h3><strong><%= foodtruck.name%> :</strong></h3><br>
+              <%= foodtruck.city%> <br>
+              <%= foodtruck.category%> <br>
+              <%= foodtruck.price_per_day%> <br>
+              <%= foodtruck.menu%> <br><br>
+              <% @bookings << foodtruck.id %>
+            <% end %>
+        </div>
 </div>
-
-

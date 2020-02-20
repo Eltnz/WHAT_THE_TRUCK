@@ -33,7 +33,6 @@
       <div id=“collapseTwo” class=“collapse” aria-labelledby=“headingTwo” data-parent=“#accordionExample”>
         <div class=“card-body”>
           <h2> My foodtrucks :</h2>
-            <% @bookings = [] %>
             <% @foodtrucks.each do |foodtruck| %>
               <strong><%= foodtruck.name%> :</strong><br>
               <%= foodtruck.city%> <br>

@@ -4,7 +4,6 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "bootstrap";
-import flatpickr from "flatpickr"
 import { setFlatpickr } from '../plugins/flatpickr.js'
 import { initMapbox } from '../plugins/init_mapbox';
 

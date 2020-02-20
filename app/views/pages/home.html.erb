@@ -2,9 +2,8 @@
 ​
   <div class="container text-center">
     <h1 id=homepagetitle>What the truck</h1>
-    <h3>Find the best foodtruck in your city for you event</h3>
+    <p>Find the best foodtruck in your city for you event</p>
     <br>
-    <p>Great wheels on tire! </p>
 ​    <br>
     <br>
 
@@ -41,18 +40,22 @@
 
       </ul>
 ​
+
+
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class= "d-flex">
         <!-- 3 card foodtruck -->
         <% @foodtrucks.first(3).each do |foodtruck| %>
+        <%= link_to food_truck_path(foodtruck) do %>
+
           <div class="card-food-truck">
-            <%= image_tag "https://images.unsplash.com/photo-1573918780733-c6cc6d4d5b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80.jpg" %>
+            <%= image_tag "https://images.unsplash.com/photo-1573918780733-c6cc6d4d5b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80.jpg"%>
               <div class="card-food-truck-infos">
                 <div>
                   <p><%= foodtruck.city %></p>
-                  <h3><%= link_to foodtruck.name, food_truck_path(foodtruck)%></h3>
+                  <h3><%=foodtruck.name%></h3>
                   <p><%= foodtruck.category %></p>
                 </div>
                 <div class="card-food-truck-infos-price">
@@ -62,6 +65,8 @@
                 </div>
               </div>
           </div>
+
+          <% end %>
         <% end %>
         </div>
       </div>
@@ -69,12 +74,13 @@
       <div class="carousel-item">
         <div class="d-flex">
           <% @foodtrucks.last(3).each do |foodtruck| %>
+          <%= link_to food_truck_path(foodtruck) do %>
             <div class="card-food-truck">
               <%= image_tag "https://images.unsplash.com/photo-1573918780733-c6cc6d4d5b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80.jpg" %>
               <div class="card-food-truck-infos">
                 <div>
                   <p><%= foodtruck.city %></p>
-                  <h3><%= link_to foodtruck.name, food_truck_path(foodtruck)%></h3>
+                  <h3><%=foodtruck.name%></h3>
                   <p><%= foodtruck.category %></p>
                 </div>
                 <div class="card-food-truck-infos-price">
@@ -85,6 +91,7 @@
               </div>
             </div>
             <% end %>
+          <% end %>
             </div>
         </div>
 ​
@@ -115,6 +122,7 @@
   </div>
 </div>
 </div>
+
 
 
 

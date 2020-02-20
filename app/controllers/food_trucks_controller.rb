@@ -1,13 +1,13 @@
 class FoodTrucksController < ApplicationController
 skip_before_action :authenticate_user!, only: [:show, :search]
-
-  def index
-    @foodtrucks = Foodtruck.geocoded # returns foodtrucks with coordinates
-
-    @markers = @footrucks.map do |flat|
+  def home
+    @foodtrucks = FoodTruck.where.not(latitude: nil, longitude: nil)
+    @foodtrucks_for_map = @footrucks.geocoded
+    @markers = @footruck_for_map.map do |foodtruck|
       {
         lat: foodtruck.latitude,
-        lng: foodtruck.longitude
+        lng: foodtruck.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { foodtruck: foodtruck })
       }
     end
   end

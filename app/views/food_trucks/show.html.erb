@@ -1,3 +1,4 @@
+  <div class="container pt-5">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -25,53 +26,45 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+</div>
 
+<div class="container d-flex">
 
-
-
-<div class="black-info-banner ">
-  <div class="container">
-    <div class="d-flex flex-row align-items-end">
-      <h1><%= @foodtruck.name.capitalize %></h1>
-      <ul>
-        <li id="star" class="list-inline-item fas fa-star"></li>
-        <li id="star" class="list-inline-item fas fa-star"></li>
-        <li id="star" class="list-inline-item fas fa-star"></li>
-        <li id="star" class="list-inline-item fas fa-star"></li>
-        <li id="star" class="list-inline-item far fa-star"></li>
-
-      </ul>
-
-    </div>
-
+  <div class="black-info-banner ">
+    <div class="container">
+      <div class="d-flex flex-row align-items-end">
+        <h1><%= @foodtruck.name.capitalize %></h1>
+        <ul>
+          <li id="star" class="list-inline-item fas fa-star"></li>
+          <li id="star" class="list-inline-item fas fa-star"></li>
+          <li id="star" class="list-inline-item fas fa-star"></li>
+          <li id="star" class="list-inline-item fas fa-star"></li>
+          <li id="star" class="list-inline-item far fa-star"></li>
+        </ul>
+      </div>
       <p><%= @foodtruck.category %></p>
-    <div>
 
-    </div>
-    <div class="d-flex flex-row align-items-end">
-      <i id="localisation" class="fas fa-map-marker-alt fa-2x"></i>
-      <h2 class="r-5"><%= @foodtruck.city&.capitalize %>  </h2>
-    </div>
+      <div class="d-flex flex-row align-items-end">
+        <i id="localisation" class="fas fa-map-marker-alt fa-2x"></i>
+        <h2 class="r-5"><%= @foodtruck.city&.capitalize %>  </h2>
+      </div>
 
-    <br>
-    <div class="card-food-truck-infos-price">
-      <p id=currency-white>€</p>
-      <h3><%= @foodtruck.price_per_day %></h3>
-      <p id="day-show">  PER DAY</p>
-
-    </div>
-
-    <div>
       <br>
-      <%= link_to "BOOK NOW", new_food_truck_booking_path(@foodtruck) , class: "btn-green" %>
+      <div class="card-food-truck-infos-price">
+        <p id=currency-white>€</p>
+        <h3><%= @foodtruck.price_per_day %></h3>
+        <p id="day-show">  PER DAY</p>
+
+      </div>
+
+      <div>
+        <br>
+        <%= link_to "BOOK NOW", new_food_truck_booking_path(@foodtruck) , class: "btn-green" %>
+      </div>
+      <br>
+         <!--  <li class="list-inline-item">Availability : <%= @foodtruck.availability %></li> -->
+      </div>
     </div>
-    <br>
-       <!--  <li class="list-inline-item">Availability : <%= @foodtruck.availability %></li> -->
-
-    </div>
-
-
-  </div>
 
 </div>
 
@@ -83,12 +76,7 @@
       <p><%= @foodtruck.menu %></p>
       <br>
       <br>
-     </div>
-  <div class="text-right"><%= link_to "Back to homepage", root_path, class: "return-link" %>
-  </div>
-
+    </div>
   </div>
 
 
-
-</div>

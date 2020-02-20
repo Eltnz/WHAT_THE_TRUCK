@@ -5,7 +5,6 @@ require("channels")
 
 import "bootstrap";
 import flatpickr from "flatpickr"
-import 'flatpickr/dist/flatpickr.css'
 import { setFlatpickr } from '../plugins/flatpickr.js'
 import { initMapbox } from '../plugins/init_mapbox';
 

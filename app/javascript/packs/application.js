@@ -4,8 +4,10 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "bootstrap";
+
 import { setFlatpickr } from '../plugins/flatpickr.js'
 import { initMapbox } from '../plugins/init_mapbox';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 
 

@@ -1,68 +1,55 @@
-<div class=“container”>
-  <h1> <em>DASHBOARD</em></h1>
-  <div class=“accordion” id=“accordionExample”>
-    <% if @bookings.to_a.empty? == false %>
-    <div class=“card”>
-      <div class=“card-header” id=“headingOne”>
-        <h2 class=“mb-0”>
-          <button class=“btn btn-link” type=“button” data-toggle=“collapse” data-target=“#collapseOne” aria-expanded=“true” aria-controls=“collapseOne”>
-            <p class=“accordeon”>My Bookings</p>
+
+<h1> DASHBOARD</h1>
+
+<div class="container">
+  <div class="accordion" id="accordionExample">
+    <% unless @bookings %>
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Bookings
           </button>
         </h2>
       </div>
-      <div id=“collapseOne” class=“collapse show” aria-labelledby=“headingOne” data-parent=“#accordionExample”>
-        <div class=“card-body”>
-            <h2> My bookings :</h2>
-            <% @bookings.each do |booking| %>
-              <p> Du <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> au <%= booking.end_date.day %>/<%= booking.end_date.month%>/<%= booking.end_date.year %></p>
-              <p>Pour un total de : <%= booking.total_price %> €</p>
-            <% end %>
-        </div>
-      </div>
-    </div>
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <% @bookings.each do |booking| %>
+          <%= render 'bookings_list', booking: booking %>
+        <% end %>
     <% end %>
-    <% if @foodtrucks.to_a.empty? == false %>
-    <div class=“card”>
-      <div class=“card-header” id=“headingTwo”>
-        <h2 class=“mb-0”>
-          <button class=“btn btn-link collapsed” type=“button” data-toggle=“collapse” data-target=“#collapseTwo” aria-expanded=“false” aria-controls=“collapseTwo”>
-            <p class=“accordeon”>My FoodTrucks</p>
-          </button>
-        </h2>
-      </div>
-      <div id=“collapseTwo” class=“collapse” aria-labelledby=“headingTwo” data-parent=“#accordionExample”>
-        <div class=“card-body”>
-          <h2> My foodtrucks :</h2>
-            <% @bookings = [] %>
-            <% @foodtrucks.each do |foodtruck| %>
-              <strong><%= foodtruck.name%> :</strong><br>
-              <%= foodtruck.city%> <br>
-              <%= foodtruck.category%> <br>
-              <%= foodtruck.price_per_day%> € per day<br>
-              <%= foodtruck.menu%> <br><br>
-            <% end %>
-        </div>
-      </div>
     </div>
-    <% end %>
-    <div class=“card”>
-      <div class=“card-header” id=“headingThree”>
-        <h2 class=“mb-0”>
-          <button class=“btn btn-link collapsed” type=“button” data-toggle=“collapse” data-target=“#collapseThree” aria-expanded=“false” aria-controls=“collapseThree”>
-            <p class=“accordeon”>My FoodTruck’s Bookings</p>
+    <% if @foodtrucks %>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            FoodTruck
           </button>
         </h2>
       </div>
-      <div id=“collapseThree” class=“collapse” aria-labelledby=“headingThree” data-parent=“#accordionExample”>
-        <div class=“card-body”>
-              <h2> My truck’s bookings :</h2>
-          <% @bookings.each do |foodtruck_id| %>
-            <% booking = Booking.where([“food_truck_id = ?“, foodtruck_id]) %>
-            <p> Du <%= booking[0].start_date.day %>/<%= booking[0].start_date.month %>/<%= booking[0].start_date.year %> au <%= booking[0].end_date.day %>/<%= booking[0].end_date.month%>/<%= booking[0].end_date.year %></p>
-            <p>Pour un total de : <%= booking[0].total_price %> €</p>
+      <div id="collapseTwo" class="collapse d-inline-flex p-2" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <% @foodtrucks.each do |foodtruck| %>
+            <% if foodtruck %>
+              <%= render 'foodtruck_list', foodtruck: foodtruck %>
+            <% end %>
           <% end %>
-        </div>
       </div>
     </div>
-  </div>
-</div>
+    <% end %>
+
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            FoodTruck's Bookings
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse d-inline-flex p-2" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <% @foodtrucks.each do |foodtruck| %>
+          <% if foodtruck.bookings %>
+            <%= render 'foodtruck_bookings_card', foodtruck: foodtruck %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>

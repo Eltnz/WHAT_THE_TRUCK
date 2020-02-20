@@ -35,6 +35,8 @@ skip_before_action :authenticate_user!, only: [:show, :search]
     end
 
 
+
+
   private
 
   def foodtruck_params

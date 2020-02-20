@@ -1,4 +1,5 @@
 import flatpickr from "flatpickr"
+
 const setFlatpickr = () => {
   console.log("setFlatpickr")
   if (document.querySelector('#flatpickr-start')) {

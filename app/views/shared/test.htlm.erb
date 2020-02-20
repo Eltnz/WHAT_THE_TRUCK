@@ -16,3 +16,37 @@
 <% end -%>
 
 <p><%= link_to "FIND THE FOODTRUCK OF YOUR DREAMS", "#", class: "btn-yellow-slide", id="search" %></p>
+
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="navbar-nav d-flex align-items-end">
+      <div class="nav-item pr-4"><%= link_to "#", class: "navbar-brand" do %>
+        <%= link_to root_path do %>
+          <%= image_tag 'logo.png', style: "width: 40px;" %>
+          <% end %>
+      <% end %>
+    </div>
+      <h3 id=logotitle>What The Truck</h3>
+    </div>
+
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          </li>
+          <li class="nav-item">
+            <%= link_to "My Dashboard", "/dashboard", class: "nav-link" %>
+            </li>
+            <li class="nav-item dropdown">
+              <%= image_tag "https://www.biography.com/.image/t_share/MTY3MDUxMjkzMjI1OTIwMTcz/brad-pitt-attends-the-premiere-of-20th-century-foxs--square.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <%= link_to "Log out", "#", class: "dropdown-item " %>
+                <%= link_to "Seetings", "", class: "dropdown-item" %>
+
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+</div>

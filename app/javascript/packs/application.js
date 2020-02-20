@@ -8,6 +8,7 @@ import flatpickr from "flatpickr"
 import 'flatpickr/dist/flatpickr.css'
 import { setFlatpickr } from '../plugins/flatpickr.js'
 import { initMapbox } from '../plugins/init_mapbox';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 
 

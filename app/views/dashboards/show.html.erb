@@ -18,13 +18,14 @@
           <%= render 'bookings_list', booking: booking %>
         <% end %>
     <% end %>
-    </div>
+
+    <!-- User's foodtrucks to rent section -->
     <% if @foodtrucks %>
     <div class="card">
       <div class="card-header" id="headingTwo">
         <h2 class="mb-0">
           <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            FoodTruck
+            my Foodtrucks
           </button>
         </h2>
       </div>
@@ -32,17 +33,19 @@
           <% @foodtrucks.each do |foodtruck| %>
             <% if foodtruck %>
               <%= render 'foodtruck_list', foodtruck: foodtruck %>
+              <%= render 'foodtruck_update', foodtruck: foodtruck  %>
+              <%= render 'foodtruck_delete', foodtruck: foodtruck  %>
             <% end %>
           <% end %>
       </div>
     </div>
     <% end %>
-
+    <!-- User's foodtrucks booking section -->
     <div class="card">
       <div class="card-header" id="headingThree">
         <h2 class="mb-0">
           <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            FoodTruck's Bookings
+            my Bookings
           </button>
         </h2>
       </div>
@@ -53,25 +56,19 @@
           <% end %>
         <% end %>
       </div>
-
-
-
-
-      <div>
-        <h2>Add your foodtruck to rent</h2>
-      </div>
-        <%= simple_form_for @foodtruck do |f| %>
-        <%= f.input :name %>
-        <%= f.input :address %>
-        <%= f.input :city %>
-        <%= f.input :category %>
-        <%= f.input :menu %>
-        <%= f.input :availability %>
-        <%= f.input :price_per_day %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.submit class: 'btn btn-primary' %>
-      <% end %>
-
-      </div>
-
-    </div>
+  </div>
+  <div>
+    <!-- form to add a food truck -->
+  <h2>Add your foodtruck to rent</h2>
+  </div>
+  <%= simple_form_for @foodtruck do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :city %>
+    <%= f.input :category %>
+    <%= f.input :menu %>
+    <%= f.input :price_per_day %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit class: 'btn-green' %>
+  <% end %>
+</div>

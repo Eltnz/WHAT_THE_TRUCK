@@ -1,0 +1,7 @@
+<!--form to update a foodtruck-->
+<div>
+  <%= simple_form_for(foodtruck) do |f| %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit  %>
+  <% end %>
+</div>

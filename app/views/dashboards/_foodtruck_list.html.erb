@@ -1,20 +1,15 @@
+<!--cards with foodtruck infos-->
 <div class="card-body">
   <div class="card-product">
     <% if foodtruck.photos.attached?  %>
-      <%= cl_image_tag foodtruck.photos.first.key, height: 150, width: 200, crop: :fill %>
+      <%= cl_image_tag foodtruck.photos.first.key, height: 100, width: 120, crop: :fill %>
     <%end %>
-      <div class="card-product-infos">
-        <h3><strong><%= foodtruck.name%> :</strong></h3><br>
-        <%= foodtruck.city%> <br>
-        <%= foodtruck.category%> <br>
-        <%= foodtruck.price_per_day%> <br>
-        <%= foodtruck.menu%> <br><br>
-      </div>
+    <div class="card-product-infos">
+      <h3><strong><%= foodtruck.name%> :</strong></h3><br>
+      <%= foodtruck.city%> <br>
+      <%= foodtruck.category%> <br>
+      <%= foodtruck.price_per_day%> €<br>
+      <%= foodtruck.menu%> <br><br>
     </div>
-  <div>
-    <%= simple_form_for(foodtruck) do |f| %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
- <!--      <%= f.submit  %> -->
-    <% end %>
   </div>
 </div>

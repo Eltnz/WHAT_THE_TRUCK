@@ -33,16 +33,28 @@ skip_before_action :authenticate_user!, only: [:show, :search]
       @foodtruck = FoodTruck.new
     end
 
-    def create
-     @user = current_user
-     @foodtruck = FoodTruck.new(foodtruck_params)
-     @foodtruck.user = @user
-      if @foodtruck.save
-        redirect_to dashboard_path(@user)
-      else
-       render "/dashboard/:id"
-      end
+  def create
+   @user = current_user
+   @foodtruck = FoodTruck.new(foodtruck_params)
+   @foodtruck.user = @user
+    if @foodtruck.save
+      redirect_to dashboard_path(@user)
+    else
+     render "/dashboard/:id"
     end
+  end
+
+def update
+  @foodtruck = FoodTruck.find(params[:id])
+  @foodtruck.update(foodtruck_params)
+  redirect_to food_truck_path(@foodtruck)
+end
+
+def destroy
+  @foodtruck = FoodTruck.find(params[:id])
+  @foodtruck.destroy
+  redirect_to dashboard_path
+end
 
 
   private

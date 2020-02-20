@@ -1,0 +1,7 @@
+<!--delete icon to destroy a foodtruck-->
+<div>
+  <p><%= link_to dashboard_path(@foodtruck), method: :delete, data: { confirm: "Are you sure?" } do %>
+  <i id ="trash" class="fas fa-trash-alt" style="font-size: 15px; margin-top: 15px "></i>
+  <% end %>
+  </p>
+</div>

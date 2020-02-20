@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'dashboard', to: 'dashboards#show', as: :dashboard
-  resources :food_trucks, only: [:show, :new, :create] do
+  resources :food_trucks, only: [:show, :new, :create, :update, :destroy] do
     resources :bookings, only: [:new, :create]
   end
   get '/search', to: "food_trucks#search", as: :ft_search

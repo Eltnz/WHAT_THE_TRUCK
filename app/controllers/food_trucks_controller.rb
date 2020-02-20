@@ -4,6 +4,7 @@ skip_before_action :authenticate_user!, only: [:show, :search]
 
   def show
     @foodtruck = FoodTruck.find(params[:id])
+
   end
 
   def search
@@ -16,6 +17,16 @@ skip_before_action :authenticate_user!, only: [:show, :search]
     else
       redirect_to root_path
     end
+
+     @markers = @foodtrucks.map do |foodtruck|
+      {
+        lat: foodtruck.latitude,
+        lng: foodtruck.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { foodtruck: foodtruck }),
+        image_url: helpers.asset_url('logo.png')
+      }
+    end
+
   end
 
   def new

@@ -77,5 +77,23 @@
   object-fit: cover;
 }
 
+#simage  > img {
+height: 225px;
+object-fit: cover;
+}
+
+#linktextnone a {
+text-decoration: none;
+}
+
+#star {
+  font-size: 10px;
+  margin-bottom: 0;
+}
+
+#h2change {
+  font-size: 16px;
+  margin-bottom: 0;
+}
 
 

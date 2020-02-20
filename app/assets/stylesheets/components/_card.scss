@@ -10,6 +10,7 @@
   border-radius: 2px;
   display:flex;
   flex-direction:column;
+  text-decoration: none;
 }
 
 .card-food-truck > img {
@@ -76,8 +77,5 @@
   object-fit: cover;
 }
 
-.card-food-truck-infos h3 {
-text-decoration: none;
-}
 
 

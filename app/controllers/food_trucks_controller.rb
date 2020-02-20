@@ -37,7 +37,6 @@ skip_before_action :authenticate_user!, only: [:show, :search]
      @user = current_user
      @foodtruck = FoodTruck.new(foodtruck_params)
      @foodtruck.user = @user
-
       if @foodtruck.save
         redirect_to dashboard_path(@user)
       else
@@ -49,7 +48,7 @@ skip_before_action :authenticate_user!, only: [:show, :search]
   private
 
   def foodtruck_params
-    params.require(:food_truck).permit(:name, :category, :menu, :availability, :city, :price_per_day, :photo, :user_id)
+    params.require(:food_truck).permit(:name, :category, :menu, :city, :price_per_day, :user_id, photos: [])
   end
 end
 

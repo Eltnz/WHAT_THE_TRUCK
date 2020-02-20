@@ -5,13 +5,16 @@
       <h2>Create your Food Truck</h2>
       <%= simple_form_for @foodtruck do |f| %>
       <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :city %>
       <%= f.input :category %>
       <%= f.input :menu %>
       <%= f.input :availability %>
-      <%= f.input :city %>
       <%= f.input :price_per_day %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
 </div>
+

@@ -1,6 +1,8 @@
 <div class="card-body">
   <div class="card-product">
-    <img src=".jpg" />
+    <% if foodtruck.photos.attached?  %>
+      <%= cl_image_tag foodtruck.photos.first.key, height: 150, width: 200, crop: :fill %>
+    <%end %>
       <div class="card-product-infos">
         <h3><strong><%= foodtruck.name%> :</strong></h3><br>
         <%= foodtruck.city%> <br>
@@ -9,4 +11,10 @@
         <%= foodtruck.menu%> <br><br>
       </div>
     </div>
+  <div>
+    <%= simple_form_for(foodtruck) do |f| %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+ <!--      <%= f.submit  %> -->
+    <% end %>
+  </div>
 </div>

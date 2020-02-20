@@ -1,7 +1,8 @@
 
-<h1> DASHBOARD</h1>
+
 
 <div class="container">
+  <h1 class=text-center> My dashboard</h1>
   <div class="accordion" id="accordionExample">
     <% unless @bookings %>
     <div class="card">
@@ -52,4 +53,25 @@
           <% end %>
         <% end %>
       </div>
+
+
+
+
+      <div>
+        <h2>Add your foodtruck to rent</h2>
+      </div>
+        <%= simple_form_for @foodtruck do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :city %>
+        <%= f.input :category %>
+        <%= f.input :menu %>
+        <%= f.input :availability %>
+        <%= f.input :price_per_day %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+
+      </div>
+
     </div>

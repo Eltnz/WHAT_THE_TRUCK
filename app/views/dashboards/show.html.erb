@@ -4,7 +4,7 @@
 <div class="container">
   <h1 class=text-center> My dashboard</h1>
   <div class="accordion" id="accordionExample">
-    <% unless @bookings %>
+    <% if @bookings %>
     <div class="card">
       <div class="card-header" id="headingOne">
         <h2 class="mb-0">
@@ -13,13 +13,15 @@
           </button>
         </h2>
       </div>
+
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <% @bookings.each do |booking| %>
           <%= render 'bookings_list', booking: booking %>
         <% end %>
     <% end %>
+    </div>
 
-    <!-- User's foodtrucks to rent section -->
+
     <% if @foodtrucks %>
     <div class="card">
       <div class="card-header" id="headingTwo">
@@ -47,6 +49,7 @@
       </div>
     </div>
     <% end %>
+
     <!-- User's foodtrucks booking section -->
     <div class="card">
       <div class="card-header" id="headingThree">
@@ -60,8 +63,9 @@
         <% @foodtrucks.each do |foodtruck| %>
           <% if foodtruck.bookings %>
             <%= render 'foodtruck_bookings_card', foodtruck: foodtruck %>
+
           <% end %>
-        <% end %>
+        </div>
       </div>
   </div>
   <div>

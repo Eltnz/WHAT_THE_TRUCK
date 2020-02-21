@@ -7,7 +7,7 @@
   background: $baby-white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   margin: 20px;
-  border-radius: 2px;
+  border-radius: 5px;
   display:flex;
   flex-direction:column;
   text-decoration: none;
@@ -87,6 +87,7 @@ text-decoration: none;
 }
 
 #star {
+  color: $warm-yellow;
   font-size: 10px;
   margin-bottom: 0;
 }
@@ -105,4 +106,45 @@ text-decoration: none;
   font-size: 16px;
   margin: 0;
   font-weight: bold;
+}
+
+@media (max-width: 992px){
+  .card-food-truck{
+    grid-template-columns: repeat(2,1fr);
+}
+}
+
+@media (min-width: 100px) and (max-width: 575px){
+.card-food-truck {
+    grid-template-columns: 1fr;
+}
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .card-food-truck {
+    grid-template-columns: 1fr;
+  }
+  #map {
+    display: none;
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .card-food-truck {
+    grid-template-columns: 1fr 1fr;
+  }
+  #map {
+    display: none;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 1200px) {
+  .card-food-truck {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #map {
+    display: block;
+  }
 }

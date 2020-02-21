@@ -1,7 +1,7 @@
-<!--cards with foodtruck infos-->
-<div class=container>
-  <div>
-    <h4><%=foodtruck.name%></h4>
+<div class="card-body">
+  <div class="card-product">
+      <div class="card-product-infos">
+        <h4><%=foodtruck.name%></h4>
   </div>
   <div>
     <% if foodtruck.photo.attached?  %>
@@ -16,5 +16,3 @@
       <li><strong>Menu: </strong> <%= foodtruck.menu%></li>
     </ul>
   </div>
-</div>
-

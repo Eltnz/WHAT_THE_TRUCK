@@ -13,13 +13,14 @@
 ​   <br>
     <br>
 
-​
+    <div class='searchform'>
       <%= form_tag(ft_search_path, method: 'get') do %>
       <div class="field p-3 d-flex justify-content-around align-items-center">
         <%= 'Address:' %><%= text_field_tag 'city', placeholder="Enter a location" %>
         <%= 'Start date:' %><%= date_field_tag 'start_date' %>
         <%= 'End date:' %><%= date_field_tag 'end_date' %>
       </div>
+    </div>
 ​
     <div>
       <%= submit_tag "FIND THE FOODTRUCK OF YOUR DREAMS", class: "btn-yellow-slide" %>

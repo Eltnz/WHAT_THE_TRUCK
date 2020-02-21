@@ -8,14 +8,10 @@ skip_before_action :authenticate_user!, only: [:show, :search]
   end
 
   def search
-    if (params[:city].empty? && params[:category].empty?)
+    if params[:address].empty?
       @foodtrucks = FoodTruck.all
-    elsif (params[:category].empty? == false && params[:city].empty? == false)
-      @foodtrucks = FoodTruck.search_by_city_and_category(params[:category])
-    elsif params[:city].empty? == false
-      @foodtrucks = FoodTruck.search_by_city(params[:city])
-    elsif params[:category].empty? == false
-      @foodtrucks = FoodTruck.search_by_category(params[:category])
+    else
+      @foodtrucks = FoodTruck.search_by_address(params[:address])
     end
 
      @markers = @foodtrucks.map do |foodtruck|
@@ -26,7 +22,6 @@ skip_before_action :authenticate_user!, only: [:show, :search]
         image_url: helpers.asset_url('logo.png')
       }
     end
-
   end
 
   def new
@@ -49,7 +44,7 @@ skip_before_action :authenticate_user!, only: [:show, :search]
   private
 
   def foodtruck_params
-    params.require(:food_truck).permit(:name, :category, :menu, :availability, :city, :price_per_day, :photo, :user_id)
+    params.require(:food_truck).permit(:name, :category, :menu, :address, :availability, :city, :price_per_day, :photo, :user_id)
   end
 end
 

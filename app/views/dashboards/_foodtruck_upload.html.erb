@@ -1,9 +1,5 @@
-
-
-
-
-<%= simple_form_for(@foodtruck) do |f| %>
+<%= simple_form_for[@foodtruck] do |f| %>
   <%= f.input :name %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit%>
 <% end %>

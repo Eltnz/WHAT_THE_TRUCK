@@ -53,14 +53,13 @@ end
 def destroy
   @foodtruck = FoodTruck.find(params[:id])
   @foodtruck.destroy
-  redirect_to dashboard_path
+  redirect_to root_path
 end
-
 
   private
 
   def foodtruck_params
-    params.require(:food_truck).permit(:name, :category, :menu, :city, :price_per_day, :user_id, photos: [])
+    params.require(:food_truck).permit(:name, :address, :category, :menu, :city, :price_per_day, :availability, :photo, :user_id)
   end
 end
 

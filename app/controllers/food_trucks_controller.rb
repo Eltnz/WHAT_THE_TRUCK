@@ -52,6 +52,8 @@ skip_before_action :authenticate_user!, only: [:show, :search]
     redirect_to dashboard_path
   end
 
+
+
   private
 
   def foodtruck_params

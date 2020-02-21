@@ -1,17 +1,38 @@
-  <div class="container pt-5">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
 
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="image-carousel" src="https://images.unsplash.com/photo-1500338427510-5deb175987d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2854&q=80=First slide" alt="First slide">
+      </div>
+    <div class="carousel-item">
+        <img class="image-carousel" src="https://images.unsplash.com/photo-1579208030886-b937da0925dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80=Second slide" alt="Second slide">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="image-carousel" src="https://images.unsplash.com/photo-1498602679121-1adc04bd257f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1675&q=80=Third slide" alt="Third slide">
+    </div>
+       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    </div>
+</div>
 
-<div class="container d-flex">
 
+<div class="container d-flex justify-content-between" id="content-foodtruck">
+  <div>
   <div class="black-info-banner ">
     <div class="container">
-      <div class="d-flex flex-row align-items-end">
+      <div class="title-card d-flex flex-row align-items-end">
         <h1><%= @foodtruck.name.capitalize %></h1>
         <ul>
           <li id="star" class="list-inline-item fas fa-star"></li>
@@ -36,26 +57,51 @@
 
       </div>
 
-      <div>
-        <br>
-        <%= link_to "BOOK NOW", new_food_truck_booking_path(@foodtruck) , class: "btn-green" %>
-      </div>
-      <br>
          <!--  <li class="list-inline-item">Availability : <%= @foodtruck.availability %></li> -->
+
+
+      </div>
+
+    </div>
+     <div class="white-info-banner">
+        <div class="py-2 menu">
+          <h2>Menu</h2>
+          <br>
+          <p><%= @foodtruck.menu %></p>
+          <br>
+          <br>
+        </div>
       </div>
     </div>
 
-</div>
 
-<div class="white-info-banner pb-3">
-  <div class="container ">
-     <div class="my-6 ">
-      <h2>Menu</h2>
-      <br>
-      <p><%= @foodtruck.menu %></p>
-      <br>
-      <br>
-    </div>
+
+
+
+      <div class="recap container-search text-center">
+
+
+      <%= simple_form_for [@foodtruck, @booking] do |f| %>
+      <%= f.input :commenter, :input_html => { :value => current_user.first_name }, label: false, disabled: true %>
+      <%=f.input :start_date, :input_html => { :value => params[:start_date], id: "flatpickr-start" } %>
+      <%=f.input :end_date, :input_html => { :value => params[:end_date], id: "flatpickr-end" } %>
+      <%= f.submit "Book it", class: "btn-green search"%>
+        <% end %>
+
+
+
+        </div>
+
+
+
+
+
   </div>
+
+
+
+
+
+
 
 

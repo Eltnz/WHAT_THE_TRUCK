@@ -1,7 +1,8 @@
 
-<h1> DASHBOARD</h1>
+
 
 <div class="container">
+  <h1 class=text-center> My dashboard</h1>
   <div class="accordion" id="accordionExample">
     <% if @bookings %>
     <div class="card">
@@ -20,42 +21,65 @@
     <% end %>
     </div>
 
+
     <% if @foodtrucks %>
     <div class="card">
       <div class="card-header" id="headingTwo">
         <h2 class="mb-0">
           <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            FoodTruck
+            my Foodtrucks
           </button>
         </h2>
       </div>
-      <div id="collapseTwo" class="collapse d-inline-flex p-2" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div id="collapseTwo" class="collapse text-left" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="container">
           <% @foodtrucks.each do |foodtruck| %>
             <% if foodtruck %>
               <%= render 'foodtruck_list', foodtruck: foodtruck %>
+              <%= render 'foodtruck_update', foodtruck: foodtruck  %>
+              <div>
+          <p><%= link_to food_truck_path(foodtruck), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i id ="trash" class="fas fa-trash-alt" style="font-size: 15px; margin-top: 15px "></i>
+          <% end %>
+          </p>
+        </div>
             <% end %>
           <% end %>
+        </div>
       </div>
     </div>
     <% end %>
 
-      <div class="card">
-        <div class="card-header" id="headingThree">
-          <h2 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              FoodTruck's Bookings
-            </button>
-          </h2>
-        </div>
-        <div id="collapseThree" class="collapse d-inline-flex p-2" aria-labelledby="headingThree" data-parent="#accordionExample">
-          <% @foodtrucks.each do |foodtruck| %>
-            <% if foodtruck.bookings %>
-              <%= render 'foodtruck_bookings_card', foodtruck: foodtruck %>
-            <% end %>
+    <!-- User's foodtrucks booking section -->
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            my Bookings
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse d-inline-flex p-2" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <% @foodtrucks.each do |foodtruck| %>
+          <% if foodtruck.bookings %>
+            <%= render 'foodtruck_bookings_card', foodtruck: foodtruck %>
+
           <% end %>
         </div>
       </div>
-
-    </div>
   </div>
+  <div>
+    <!-- form to add a food truck -->
+  <h2>Add your foodtruck to rent</h2>
+  </div>
+  <%= simple_form_for @foodtruck do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :city %>
+    <%= f.input :category %>
+    <%= f.input :menu %>
+    <%= f.input :price_per_day %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: 'btn-green' %>
+  <% end %>
 </div>

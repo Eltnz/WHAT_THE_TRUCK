@@ -1,5 +1,4 @@
 <div class="card-body">
-  <div class="card-product">
     <div class="card-product-infos flex-wrap p-2">
       <% foodtruck.bookings.each do |booking| %>
         <h3><%= foodtruck.name%></h3>
@@ -8,5 +7,4 @@
           <%= booking.total_price %> €</p>
       <%end %>
     </div>
-  </div>
 </div>

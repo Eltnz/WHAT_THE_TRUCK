@@ -32,12 +32,12 @@
             </button>
           </h2>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-             <div class="d-flex flex-wrap p-2">
+             <div class="d-flex flex-wrap p-2 justify-content-center">
                 <% @foodtrucks.each do |foodtruck| %>
                   <% if foodtruck %>
-                    <div class="d-flex">
+                    <div class="d-flex ">
+                      <div class="inline"></div>
                       <%= render 'foodtruck_list', foodtruck: foodtruck %>
-                      <%= render 'foodtruck_update', foodtruck: foodtruck  %>
                       <p><%= link_to food_truck_path(foodtruck), method: :delete, data: { confirm: "Are you sure?" } do %>
                         <i id ="trash" class="fas fa-trash-alt" style="font-size: 15px; margin-top: 15px "></i>
                       </p>

@@ -77,5 +77,32 @@
   object-fit: cover;
 }
 
+#simage  > img {
+height: 225px;
+object-fit: cover;
+}
 
+#linktextnone a {
+text-decoration: none;
+}
 
+#star {
+  font-size: 10px;
+  margin-bottom: 0;
+}
+
+#h2change {
+  font-size: 20px;
+  }
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+#foodtruck-category {
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+}

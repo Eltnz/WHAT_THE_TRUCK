@@ -24,12 +24,13 @@
         </a>
     </div>
     </div>
+</div>
 
 <div class="container d-flex justify-content-between" id="content-foodtruck">
   <div>
   <div class="black-info-banner ">
     <div class="container">
-      <div class="title-card d-flex flex-row align-items-end">
+      <div class="title-card d-flex flex-row align-items-end justify-content-between">
         <h1><%= @foodtruck.name.capitalize %></h1>
         <ul>
           <li id="star" class="list-inline-item fas fa-star"></li>
@@ -62,7 +63,7 @@
     </div>
      <div class="white-info-banner">
         <div class="py-2 menu">
-          <h2>Menu</h2>
+          <h2>Menu <i class="fas fa-utensils"></i></h2>
           <br>
           <p><%= @foodtruck.menu %></p>
           <br>

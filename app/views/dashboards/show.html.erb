@@ -12,12 +12,14 @@
           </button>
         </h2>
       </div>
+
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <% @bookings.each do |booking| %>
           <%= render 'bookings_list', booking: booking %>
         <% end %>
     <% end %>
     </div>
+
     <% if @foodtrucks %>
     <div class="card">
       <div class="card-header" id="headingTwo">
@@ -37,19 +39,23 @@
     </div>
     <% end %>
 
-    <div class="card">
-      <div class="card-header" id="headingThree">
-        <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            FoodTruck's Bookings
-          </button>
-        </h2>
-      </div>
-      <div id="collapseThree" class="collapse d-inline-flex p-2" aria-labelledby="headingThree" data-parent="#accordionExample">
-        <% @foodtrucks.each do |foodtruck| %>
-          <% if foodtruck.bookings %>
-            <%= render 'foodtruck_bookings_card', foodtruck: foodtruck %>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              FoodTruck's Bookings
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse d-inline-flex p-2" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <% @foodtrucks.each do |foodtruck| %>
+            <% if foodtruck.bookings %>
+              <%= render 'foodtruck_bookings_card', foodtruck: foodtruck %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
+
     </div>
+  </div>
+</div>

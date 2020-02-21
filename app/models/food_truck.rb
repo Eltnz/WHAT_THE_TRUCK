@@ -7,18 +7,8 @@ class FoodTruck < ActiveRecord::Base
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-  pg_search_scope :search_by_category,
-                  against: :category,
-                  using: {
-                    tsearch: { prefix: true }
-                  }
-  pg_search_scope :search_by_city,
-                  against: :city,
-                  using: {
-                    tsearch: { prefix: true }
-                  }
-  pg_search_scope :search_by_city_and_category,
-                  against: [:city, :category],
+  pg_search_scope :search_by_address,
+                  against: :address,
                   using: {
                     tsearch: { prefix: true }
                   }

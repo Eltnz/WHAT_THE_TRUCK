@@ -44,17 +44,18 @@ skip_before_action :authenticate_user!, only: [:show, :search]
     end
   end
 
-def update
-  @foodtruck = FoodTruck.find(params[:id])
-  @foodtruck.update(foodtruck_params)
-  redirect_to food_truck_path(@foodtruck)
-end
+  def update
+    @foodtruck = FoodTruck.find(params[:id])
+    @foodtruck.update(foodtruck_params)
+    raise
+    redirect_to dashboard_path
+  end
 
-def destroy
-  @foodtruck = FoodTruck.find(params[:id])
-  @foodtruck.destroy
-  redirect_to root_path
-end
+  def destroy
+    @foodtruck = FoodTruck.find(params[:id])
+    @foodtruck.destroy
+    redirect_to dashboard_path
+  end
 
   private
 

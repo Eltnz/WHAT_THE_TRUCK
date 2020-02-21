@@ -15,7 +15,15 @@ class DashboardsController < ApplicationController
       else
        render "/dashboard/:id"
       end
+
+    def destroy
+      @foodtruck = FoodTruck.find(params[:id])
+      @foodtruck.destroy
+      redirect_to dashboard_path
     end
+
+    end
+
 
 
 end

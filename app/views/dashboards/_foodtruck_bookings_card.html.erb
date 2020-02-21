@@ -1,6 +1,6 @@
 <div class="card-body">
   <div class="card-product">
-    <div class="card-product-infos">
+    <div class="card-product-infos flex-wrap p-2">
       <% foodtruck.bookings.each do |booking| %>
         <h3><%= foodtruck.name%></h3>
         <p> Du <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> au <%= booking.end_date.day %>/<%= booking.end_date.month%>/<%= booking.end_date.year %></p>

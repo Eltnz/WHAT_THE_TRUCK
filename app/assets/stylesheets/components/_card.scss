@@ -1,3 +1,43 @@
+.foodtruck-list {
+  padding:auto;
+  margin:auto;
+  text-align:centre;
+  background: $baby-white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  margin: 20px;
+  border-radius: 2px;
+  border: 2px black;
+  text-decoration: none;
+}
+
+.foodtruck-list li {
+  align-text: left;
+  list-style: none;
+}
+
+.booking-card {
+  padding:auto;
+  margin:auto;
+  text-align:centre;
+  width: 320px;
+  background: $baby-white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  margin: 20px;
+  border-radius: 2px;
+  display:flex;
+  flex-direction:column;
+  text-decoration: none;
+}
+
+.booking-card li {
+  list-style: none;
+  text-align: left;
+}
+
+#booking-title {
+  font-size: 32px;
+  text-align: center;
+}
 
 .card-food-truck {
   padding:auto;
@@ -12,6 +52,7 @@
   flex-direction:column;
   text-decoration: none;
 }
+
 
 .card-food-truck > img {
   height: 320px;

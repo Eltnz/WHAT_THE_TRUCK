@@ -43,7 +43,6 @@ skip_before_action :authenticate_user!, only: [:show, :search]
   def update
     @foodtruck = FoodTruck.find(params[:id])
     @foodtruck.update(foodtruck_params)
-    raise
     redirect_to dashboard_path
   end
 
@@ -58,7 +57,7 @@ skip_before_action :authenticate_user!, only: [:show, :search]
   private
 
   def foodtruck_params
-    params.require(:food_truck).permit(:name, :category, :menu, :address, :availability, :city, :price_per_day, :photo, :user_id)
+    params.require(:food_truck).permit(:name, :address, :category, :menu, :availability, :city, :price_per_day, :user_id, :photo)
   end
 end
 

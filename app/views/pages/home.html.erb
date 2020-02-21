@@ -33,22 +33,20 @@
 ​
 ​
 ​
-<div class="container text-center ">
-
+  <div class="container text-center ">
     <h2>The best rated foodtrucks of your area</h2>
-    <ul>
+      <ul>
         <li id="star" class="list-inline-item fas fa-star"></li>
         <li id="star" class="list-inline-item fas fa-star"></li>
         <li id="star" class="list-inline-item fas fa-star"></li>
         <li id="star" class="list-inline-item fas fa-star"></li>
         <li id="star" class="list-inline-item far fa-star"></li>
-
       </ul>
 
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <div class= "d-flex">
+        <div class= "d-flex justify-content-between">
         <!-- 3 card foodtruck -->
         <% @foodtrucks.last(3).each do |foodtruck| %>
         <%= link_to food_truck_path(foodtruck) do %>
@@ -101,6 +99,7 @@
           <% end %>
             </div>
         </div>
+
 ​
     </div>
 ​
@@ -113,7 +112,6 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-​
 </div>
 ​
 <div class="container">

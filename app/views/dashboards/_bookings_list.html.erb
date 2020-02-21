@@ -1,5 +1,5 @@
-<div class="card-body">
-    <li> TOTAL : <%= booking.food_truck.name%></li>
-    <li> Du <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> au <%= booking.end_date.day %>/<%= booking.end_date.month%>/<%= booking.end_date.year %></li>
-    <li> TOTAL : <%= booking.total_price %> €</li>
+<div class="card booking-card">
+    <li id="booking-title"><strong><%= booking.food_truck.name%></strong></li>
+    <li>Du <%= booking.start_date.day %>/<%= booking.start_date.month %>/<%= booking.start_date.year %> au <%= booking.end_date.day %>/<%= booking.end_date.month%>/<%= booking.end_date.year %></li>
+    <li>TOTAL : <%= booking.total_price %> €</li>
 </div>

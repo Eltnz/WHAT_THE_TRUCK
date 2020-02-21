@@ -1,18 +1,22 @@
 <div class="card-body">
-  <div class="card-product">
-      <div class="card-product-infos">
-        <h4><%=foodtruck.name%></h4>
+  <div class="card-product foodtruck-list">
+    <div class="card-product-infos">
+      <h4><%=foodtruck.name%></h4>
+    </div>
+    <div>
+      <% if foodtruck.photo.attached?  %>
+        <%= cl_image_tag foodtruck.photo.key, height: 100, width: 200, crop: :fill %>
+      <%end %>
+    </div>
+    <div>
+      <ul>
+        <li><strong>Adress:</strong><br> <%= foodtruck.address%></li>
+        <li><strong>Category:</strong><br> <%= foodtruck.category%></li>
+        <li><strong>Price per day:</strong><br> <%= foodtruck.price_per_day%> €</li>
+        <li><strong>Menu: </strong><br> <%= foodtruck.menu%></li>
+      </ul>
+    </div>
   </div>
-  <div>
-    <% if foodtruck.photo.attached?  %>
-      <%= cl_image_tag foodtruck.photo.key, height: 100, width: 200, crop: :fill %>
-    <%end %>
-  </div>
-  <div>
-    <ul>
-      <li><strong>Adress:</strong> <%= foodtruck.address%></li>
-      <li><strong>Category:</strong> <%= foodtruck.category%></li>
-      <li><strong>Price per day:</strong> <%= foodtruck.price_per_day%> €</li>
-      <li><strong>Menu: </strong> <%= foodtruck.menu%></li>
-    </ul>
-  </div>
+</div>
+
+

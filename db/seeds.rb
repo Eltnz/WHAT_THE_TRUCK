@@ -2,9 +2,9 @@
 Booking.destroy_all
 p "bookings destroyed"
 FoodTruck.destroy_all
-p "bookings destroyed"
+p "foodtrucks destroyed"
 User.destroy_all
-p "bookings destroyed"
+p "users destroyed"
 
 user_1 = User.create(email: 'brad.pitt.hollywood@gmail.com', first_name: 'Brad', last_name: 'Pitt', phone_number:'0635767687', password:'nespresso')
 user_2 = User.create(email: 'eliot.nemoz@gmail.com', first_name:'Eliot', last_name: 'Nemoz', phone_number:'0635456789', password:'nespresso')

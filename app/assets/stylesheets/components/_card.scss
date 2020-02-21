@@ -92,8 +92,17 @@ text-decoration: none;
 }
 
 #h2change {
-  font-size: 16px;
-  margin-bottom: 0;
+  font-size: 20px;
+  }
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
-
+#foodtruck-category {
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+}

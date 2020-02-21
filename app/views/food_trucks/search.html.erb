@@ -1,59 +1,64 @@
 
 
-  <div class="text-center">
+  <div class="text-center" style="font-weight: bolder;">
     <h1>Your foodtrucks</h1>
   </div>
+  <br>
+  <br>
+
     <div class="d-flex justify-content-between">
       <div class="row justify-content-between">
         <% @foodtrucks.each do |foodtruck| %>
               <div class="col-4 my-4 text-center" id=linktextnone>
                 <%= link_to food_truck_path(foodtruck, start_date: params[:start_date], end_date: params[:end_date]) do %>
-
-                      <div class="card-food-truck" id=simage>
+                    <div class="card-food-truck" id=simage>
 
 
                               <%= image_tag "https://images.unsplash.com/photo-1573918780733-c6cc6d4d5b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80.jpg" %>
 
 
-                            <div class="card-food-truck-infos">
+                            <div class="card-food-truck-infos" style="height: 160px;">
 
                                 <div class="justify-content">
                                           <h3><%= foodtruck.name.capitalize %></h3>
                                         </div>
 
-                                      <div class="d-flex justify-content-between">
+                                      <div class="d-flex justify-content-between align-items-center">
 
 
                                         <div >
-                                          <ul>
+                                          <ul class="pl-0" style="box-sizing: content-box;">
                                             <li id="star" class="list-inline-item fas fa-star"></li>
                                             <li id="star" class="list-inline-item fas fa-star"></li>
                                             <li id="star" class="list-inline-item fas fa-star"></li>
                                             <li id="star" class="list-inline-item fas fa-star"></li>
                                             <li id="star" class="list-inline-item far fa-star"></li>
+                                            <br>
+
                                           </ul>
                                         </div>
 
-                                          <p><%= foodtruck.category %></p>
+                                          <p id=foodtruck-category><%=foodtruck.category %></p>
 
-                                      </div>
+                                  </div>
+
 
 
 
 
 
                                         <div class="d-flex align-items-center text-center">
-                                          <i id="localisation" class="fas fa-map-marker-alt fa-2x"></i>
+                                          <i id="localisation" class="fas fa-map-marker-alt fa-2x" style="margin-bottom: 16px; font-size: 1.5em;"></i>
                                           <p><%= foodtruck.address %></p>
                                         </div>
 
                                         <br>
 
                                         <div class="d-flex justify-content-between px-2">
-                                          <div class="card-food-truck-infos-price">
+                                          <div class="card-food-truck-infos-price" style="position: relative; right: -160px; bottom: 25px;">
                                             <p id=currency>€</p>
                                             <h2 id=h2change><%= foodtruck.price_per_day %></h2>
-                                            <p id="day-show">PER DAY</p>
+                                            <p id="day-show" style="color: gray">PER DAY</p>
                                           </div>
                                         </div>
 
@@ -73,7 +78,7 @@
 
       <div class="container d-flex justify-content-center position-relative">
         <div id="map"
-             style=" width: 600px; height: 600px;"
+             style=" width: 600px; height: 100vh"
              data-markers="<%= @markers.to_json %>"
              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>

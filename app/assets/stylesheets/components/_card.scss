@@ -3,7 +3,7 @@
   padding:auto;
   margin:auto;
   text-align:centre;
-  width: 320px;
+  width: 280px;
   background: $baby-white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   margin: 20px;
@@ -15,7 +15,7 @@
 
 .card-food-truck > img {
   height: 320px;
-  width: 300px;
+  width: 250px;
   object-fit: cover;
   display: block;
   margin-left: auto;
@@ -36,6 +36,7 @@
   font-size: 20px;
   margin: 0;
   padding-bottom: 5px;
+  color:black;
 }
 
 .card-food-truck h2 {
@@ -45,6 +46,7 @@
 .card-food-truck-infos-price {
   display:flex;
   justify-content: flex-start;
+  color:black;
 }
 
 
@@ -58,6 +60,7 @@
   color: #636366;
   vertical-align: text-bottom;
   padding-right: 5px;
+
 }
 
 #day {
@@ -68,6 +71,9 @@
   padding-left: 5px;
 }
 
+#price{
+color: white;
+}
 .card-food-truck-infos .card-food-truck-user {
   position: absolute;
   right: 18px;
